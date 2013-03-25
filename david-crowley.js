@@ -1,52 +1,55 @@
-var http = require('http'),
+var GitHubApi = require("github"),
+	http = require('http'),
 	Tumblr = require('tumblrwks'),
-	util = require('util');
+	twitter = require('ntwitter'),
+	util = require('util'),
+	youtube = require('youtube-feeds');
 
 // import private variables, API keys and such
 var secret = require('./config/secret.js'),
-	s = new secret();
+	secret = new secret();
 
 // import config variables, URLs, usernames and such
 var config = require('./config/config.js'),
-	c = new config();
+	config = new config();
 
 var tumblr = new Tumblr(
   {
-	consumerKey: s.tumblrKey
-  }, c.tumblrURL
+	consumerKey: secret.tumblrKey
+  }, config.tumblrURL
   // specify the blog url now or the time you want to use
 );
+
+var github = new GitHubApi({
+    // required
+    version: "3.0.0",
+    // optional
+    timeout: 5000
+});
+
+// var twit = new twitter({
+// 	consumer_key: 'secret.consumerKey',
+// 	consumer_secret: 'secret.consumerSecret',
+// 	access_token_key: 'secret.accessTokenKey',
+// 	access_token_secret: 'secret.accessTokenSecret'
+// });
 
 var serv = http.createServer(function
 (req, res) {
 	res.writeHead(200,
 { 'Content-Type': 'text/html' });
 
-	// tumblr.get('/posts', {hostname: 'slantback.tumblr.com'}, function(json){
-	// 	var body = '<html>'+
-	// 		'<head>'+
-	// 		'<meta http-equiv="Content-Type" content="text/html; '+
-	// 		'charset=UTF-8" />'+
-	// 		'</head>'+
-	// 		'<body>'+
-	// 		'<h1>david-crowley.com</h1>'+
-	// 		'<h2>Tumblz</h2>'+
-	// 		'<a href="' + json.posts[0].post_url + '">' + json.posts[0].source_title +'</a></p>'+
-	// 		'<p>' + json.posts[0].text + '</p>'+
-	// 		'<img src=' + json.posts[0].photos[0].alt_sizes[0].url + '" /></p>'+
-	// 		'<a href="' + json.posts[1].post_url + '">' + json.posts[1].source_title +'</a></p>'+
-	// 		'<p>' + json.posts[1].text + '</p>'+
-	// 		'<a href="' + json.posts[2].post_url + '">' + json.posts[2].source_title +'</a></p>'+
-	// 		'<p>' + json.posts[2].text + '</p>'+
-	// 		'<img src=' + json.posts[2].photos[0].alt_sizes[0].url + '" /></p>'+
-	// 		'<a href="' + json.posts[4].post_url + '">' + json.posts[4].source_title +'</a></p>'+
-	// 		'<p>' + json.posts[4].text + '</p>'+
-	// 		'</form>'+
-	// 		'</body>'+
-	// 		'</html>';
-	//     res.write(body);
-	// 	res.end();
-	// });
+github.user.getFollowingFromUser({
+    user: "mrdcrowley"
+}, function(err, res) {
+    console.log(JSON.stringify(res));
+});
+
+// twit.stream('mrdcrowley', function(stream) {
+//   stream.on('data', function (data) {
+//     console.log(data);
+//   });
+// });
 
 
 	tumblr.get('/posts', {hostname: 'slantback.tumblr.com'}, function(json){
@@ -85,6 +88,16 @@ var serv = http.createServer(function
 				body += post.player[0].embed_code + '<p>' + post.caption + '</p>';
 			}
 		}
+
+		// youtube.user( config.twitterHandle ).uploads( function(json){
+		// 	console.log(youtube.user( config.twitterHandle ).uploads.length);
+		// 	console.log(youtube.user( config.twitterHandle ).uploads.title);
+		// });
+
+		// for ( i=0; i < youtube.user( config.twitterHandle ).uploads.length; i++) {
+		// 	youtube.user( config.twitterHandle ).uploads(console.log);
+		// 	var video = youtube.user( config.twitterHandle ).uploads;\
+		// }
 
 	    res.write(body);
 		res.end();

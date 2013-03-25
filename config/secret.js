@@ -1,5 +1,9 @@
-var Secret = function() {
-  this.tumblrKey = '';
+var secret = function() {
+	this.tumblrKey = '';
+	this.consumerKey = '';
+	this.consumerSecret = '';
+	this.accessTokenKey = '';
+	this.accessTokenSecret = '';
 };
 
-module.exports = Secret;
+module.exports = secret;

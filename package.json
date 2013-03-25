@@ -1,6 +1,6 @@
 {
 	"name": "david-crowley.com",
-	"version": "1.2.3",
+	"version": "1.2.3-3",
 	"main": "david-crowley.js",
 	"subdomain": "mrdcrowley-david-crowley-com",
 	"scripts": {
