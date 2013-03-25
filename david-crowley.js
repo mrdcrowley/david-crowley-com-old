@@ -17,7 +17,6 @@ var tumblr = new Tumblr(
   {
 	consumerKey: secret.tumblrKey
   }, config.tumblrURL
-  // specify the blog url now or the time you want to use
 );
 
 var github = new GitHubApi({
@@ -26,6 +25,8 @@ var github = new GitHubApi({
     // optional
     timeout: 5000
 });
+
+var body;
 
 // var twit = new twitter({
 // 	consumer_key: 'secret.consumerKey',
@@ -39,12 +40,6 @@ var serv = http.createServer(function
 	res.writeHead(200,
 { 'Content-Type': 'text/html' });
 
-github.user.getFollowingFromUser({
-    user: "mrdcrowley"
-}, function(err, res) {
-    console.log(JSON.stringify(res));
-});
-
 // twit.stream('mrdcrowley', function(stream) {
 //   stream.on('data', function (data) {
 //     console.log(data);
@@ -53,14 +48,14 @@ github.user.getFollowingFromUser({
 
 
 	tumblr.get('/posts', {hostname: 'slantback.tumblr.com'}, function(json){
-		var body = '<html>'+
+		body += '<html>'+
 			'<head>'+
 			'<meta http-equiv="Content-Type" content="text/html; '+
 			'charset=UTF-8" />'+
 			'</head>'+
 			'<body>'+
 			'<h1>david-crowley.com</h1>'+
-			'<h2><a href="http://slantback.tumblr.com">Tumblz</a></h2>';
+			'<h2><a href="http://slantback.tumblr.com">Tumblr findings</a></h2>';
 
 		for ( i = 0; i < 10; i++ ) {
 			post = json.posts[i];
@@ -88,6 +83,16 @@ github.user.getFollowingFromUser({
 				body += post.player[0].embed_code + '<p>' + post.caption + '</p>';
 			}
 		}
+
+		github.repos.getFromUser({
+		    user: "mrdcrowley"
+		}, function(err, res) {
+			for ( i = 0; i < res.length; i++ ) {
+				body += '<p>' + res[i].html_url + '</p>';
+				console.log(i);
+			}
+		    // console.log(JSON.stringify(res));
+		});
 
 		// youtube.user( config.twitterHandle ).uploads( function(json){
 		// 	console.log(youtube.user( config.twitterHandle ).uploads.length);
