@@ -12,6 +12,7 @@ colorHeader = #333
 colorMain = #fa5b4d
 fontBody = 'Noto Sans', Georgia, sans-serif
 fontAlt = Arvo, Georgia, sans-serif
+animationSpeed = .1s
 
 
 /* =Text */
@@ -54,6 +55,9 @@ header
 			font-size: 4em
 			z-index: 100
 			text-shadow: .04em .04em 0 #9cb8b3
+			transition all animationSpeed ease-out
+			&:hover
+				text-shadow: 2px 2px 0 #9cb8b3
 		span,
 		span:after
 			font-weight: 900
@@ -65,13 +69,18 @@ header
 			padding: .2em 0 .25em 0
 		span:after
 			content: attr(data-shadow-text)
-			color: rgba(255,255,255,.15)
+			color rgba(255,255,255,.15)
+			color #fff
 			text-shadow: none
 			position: absolute
 			left: .0875em
 			top: .0875em
 			z-index: -1;
 			-webkit-mask-image: url(http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png)
+			transition all animationSpeed ease-out
+		span:hover:after
+			top 0
+			left 0
 	.byline
 		color rgba(255,255,255,.3)
 		font-family Arvo

@@ -145,6 +145,14 @@ header h1 span {
   font-size: 4em;
   z-index: 100;
   text-shadow: 0.04em 0.04em 0 #9cb8b3;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+header h1 span:hover {
+  text-shadow: 2px 2px 0 #9cb8b3;
 }
 header h1 span,
 header h1 span:after {
@@ -159,12 +167,22 @@ header h1 span:after {
 header h1 span:after {
   content: attr(data-shadow-text);
   color: rgba(255,255,255,0.15);
+  color: #fff;
   text-shadow: none;
   position: absolute;
   left: 0.0875em;
   top: 0.0875em;
   z-index: -1;
   -webkit-mask-image: url("http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png");
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+header h1 span:hover:after {
+  top: 0;
+  left: 0;
 }
 header .byline {
   color: rgba(255,255,255,0.3);
