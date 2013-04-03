@@ -1,5 +1,3 @@
-# david-crowley.com (in progress)
+# david-crowley.com (new, in progress)
 
-Add API keys to secret.js
-
-> node server.js
+node app.js
