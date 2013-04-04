@@ -44,8 +44,13 @@ body
 header
 	background-color colorHeader
 	border-bottom 1px solid darken(colorHeader, 30%)
+	height auto
+	overflow: hidden
 	padding-left 100px
 	text-shadow 0px -1px 0px darken(colorHeader, 30%)
+	transition height animationSpeed ease-out
+	&.waitToAnimate
+		height 0
 	h1
 		font: 600 1.5em/1 'Raleway', sans-serif
 		color: rgba(0,0,0,.5)
@@ -141,8 +146,7 @@ footer
 .right
 	float right
 
-img.thumb
-iframe.thumb
+.thumb
 	float right
 	margin-bottom 4em
 	margin-left 2em
@@ -155,3 +159,22 @@ iframe.thumb
 
 .subtle
 	opacity .75
+
+@media all and (max-device-width: 851px)
+	#container
+		padding 2em
+	.one-half,
+	.one-third,
+	.two-thirds
+		width auto
+	.left,
+	.right
+		float none
+	.thumb,
+	.thumb.small
+		float none
+		height auto
+		margin 0
+		margin-bottom 1em
+		max-width: 100%
+		width 100%
