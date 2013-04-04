@@ -12,12 +12,13 @@ colorHeader = #333
 colorMain = #fa5b4d
 fontBody = 'Noto Sans', Georgia, sans-serif
 fontAlt = Arvo, Georgia, sans-serif
-animationSpeed = .1s
+animationSpeed = .2s
 
 
 /* =Text */
 a
 	color colorLink
+	transition color animationSpeed ease-out
 	&:hover
 		color darken(colorLink, 30%)
 p, h1, h2, h3, h4, h5, h6
@@ -38,12 +39,11 @@ p
 /* =Structure */
 body
 	font-family fontBody
-	background-color colorBackground
+	background colorBackground
 	color #444
 
 header
-	background-color colorHeader
-	border-bottom 1px solid darken(colorHeader, 30%)
+	background url('/img/headerBg.png') bottom
 	height auto
 	overflow: hidden
 	padding-left 100px
@@ -62,7 +62,7 @@ header
 			text-shadow: .04em .04em 0 #9cb8b3
 			transition all animationSpeed ease-out
 			&:hover
-				text-shadow: 2px 2px 0 #9cb8b3
+				text-shadow: -.04em -.04em 0 #9cb8b3
 		span,
 		span:after
 			font-weight: 900
@@ -74,8 +74,7 @@ header
 			padding: .2em 0 .25em 0
 		span:after
 			content: attr(data-shadow-text)
-			color rgba(255,255,255,.15)
-			color #fff
+			color rgba(255,255,255,.25)
 			text-shadow: none
 			position: absolute
 			left: .0875em
@@ -86,8 +85,10 @@ header
 		span:hover:after
 			top 0
 			left 0
+			left: -.0875em
+			top: -.0875em
 	.byline
-		color rgba(255,255,255,.3)
+		color rgba(255,255,255,.5)
 		font-family Arvo
 		padding-left 5px
 		margin-bottom 20px
@@ -106,7 +107,7 @@ header
 				color colorHeader
 				text-decoration none
 			a:hover
-				color #9cb8b3
+				color colorLink
 				text-shadow #fff -1px -1px 0;
 
 #content
@@ -131,7 +132,7 @@ footer
 	margin auto
 	opacity .5
 	padding-top 5em
-	width 500px
+	text-align center
 
 /* =Utilities */
 .one-half
@@ -147,6 +148,7 @@ footer
 	float right
 
 .thumb
+	border 1px solid rgba(0,0,0,.05)
 	float right
 	margin-bottom 4em
 	margin-left 2em
@@ -161,6 +163,8 @@ footer
 	opacity .75
 
 @media all and (max-device-width: 851px)
+	header
+		padding-left 2em
 	#container
 		padding 2em
 	.one-half,

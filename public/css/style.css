@@ -96,6 +96,11 @@ a img {
 /* =Text */
 a {
   color: #00a6cd;
+  -webkit-transition: color 0.2s ease-out;
+  -moz-transition: color 0.2s ease-out;
+  -o-transition: color 0.2s ease-out;
+  -ms-transition: color 0.2s ease-out;
+  transition: color 0.2s ease-out;
 }
 a:hover {
   color: #007490;
@@ -126,21 +131,20 @@ p:last-child,
 /* =Structure */
 body {
   font-family: 'Noto Sans', Georgia, sans-serif;
-  background-color: #faf9f0;
+  background: #faf9f0;
   color: #444;
 }
 header {
-  background-color: #333;
-  border-bottom: 1px solid #242424;
+  background: url("/img/headerBg.png") bottom;
   height: auto;
   overflow: hidden;
   padding-left: 100px;
   text-shadow: 0px -1px 0px #242424;
-  -webkit-transition: height 0.1s ease-out;
-  -moz-transition: height 0.1s ease-out;
-  -o-transition: height 0.1s ease-out;
-  -ms-transition: height 0.1s ease-out;
-  transition: height 0.1s ease-out;
+  -webkit-transition: height 0.2s ease-out;
+  -moz-transition: height 0.2s ease-out;
+  -o-transition: height 0.2s ease-out;
+  -ms-transition: height 0.2s ease-out;
+  transition: height 0.2s ease-out;
 }
 header.waitToAnimate {
   height: 0;
@@ -155,14 +159,14 @@ header h1 span {
   font-size: 4em;
   z-index: 100;
   text-shadow: 0.04em 0.04em 0 #9cb8b3;
-  -webkit-transition: all 0.1s ease-out;
-  -moz-transition: all 0.1s ease-out;
-  -o-transition: all 0.1s ease-out;
-  -ms-transition: all 0.1s ease-out;
-  transition: all 0.1s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 header h1 span:hover {
-  text-shadow: 2px 2px 0 #9cb8b3;
+  text-shadow: -0.04em -0.04em 0 #9cb8b3;
 }
 header h1 span,
 header h1 span:after {
@@ -176,26 +180,27 @@ header h1 span:after {
 }
 header h1 span:after {
   content: attr(data-shadow-text);
-  color: rgba(255,255,255,0.15);
-  color: #fff;
+  color: rgba(255,255,255,0.25);
   text-shadow: none;
   position: absolute;
   left: 0.0875em;
   top: 0.0875em;
   z-index: -1;
   -webkit-mask-image: url("http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png");
-  -webkit-transition: all 0.1s ease-out;
-  -moz-transition: all 0.1s ease-out;
-  -o-transition: all 0.1s ease-out;
-  -ms-transition: all 0.1s ease-out;
-  transition: all 0.1s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 header h1 span:hover:after {
   top: 0;
   left: 0;
+  left: -0.0875em;
+  top: -0.0875em;
 }
 header .byline {
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.5);
   font-family: Arvo;
   padding-left: 5px;
   margin-bottom: 20px;
@@ -214,7 +219,7 @@ header .byline {
   text-decoration: none;
 }
 #contact ul li a:hover {
-  color: #9cb8b3;
+  color: #00a6cd;
   text-shadow: #fff -1px -1px 0;
 }
 #content {
@@ -243,7 +248,7 @@ footer {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   filter: alpha(opacity=50);
   padding-top: 5em;
-  width: 500px;
+  text-align: center;
 }
 /* =Utilities */
 .one-half {
@@ -262,6 +267,7 @@ footer {
   float: right;
 }
 .thumb {
+  border: 1px solid rgba(0,0,0,0.05);
   float: right;
   margin-bottom: 4em;
   margin-left: 2em;
@@ -279,6 +285,9 @@ footer {
   filter: alpha(opacity=75);
 }
 @media all and (max-device-width: 851px) {
+  header {
+    padding-left: 2em;
+  }
   #container {
     padding: 2em;
   }
