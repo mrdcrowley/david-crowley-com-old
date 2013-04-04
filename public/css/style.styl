@@ -5,6 +5,7 @@
 
 global-reset()
 
+
 /* =Variables */
 colorBackground = #faf9f0
 colorLink = #00a6cd
@@ -23,25 +24,22 @@ a
 		color darken(colorLink, 30%)
 p, h1, h2, h3, h4, h5, h6
 	margin-bottom 1em
-
 p
 .list li
 	line-height: 140%
 	&:last-child
 		margin-bottom 3em
-
 .list li
 	margin-bottom 1em
-
 .small
 	font-size: 80%;
+
 
 /* =Structure */
 body
 	font-family fontBody
 	background colorBackground
 	color #444
-
 header
 	background url('/img/headerBg.png') bottom
 	height 0
@@ -90,11 +88,9 @@ header
 		font-family Arvo
 		padding-left 5px
 		margin-bottom 20px
-
 #container
 	padding-left 100px
 	padding-right 100px
-
 #contact
 	ul
 		li
@@ -107,7 +103,6 @@ header
 			a:hover
 				color colorLink
 				text-shadow #fff -1px -1px 0;
-
 #content
 	clear both
 	float left
@@ -123,7 +118,6 @@ header
 		clear both
 		font-size: 140%
 		font-weight 700
-
 footer
 	clear both
 	font-size 80%
@@ -131,6 +125,7 @@ footer
 	opacity .5
 	padding-top 5em
 	text-align center
+
 
 /* =Utilities */
 .one-half
@@ -159,6 +154,9 @@ footer
 
 .subtle
 	opacity .75
+	
+
+/* =Media =Queries */
 
 @media all and (max-device-width: 851px)
 	header

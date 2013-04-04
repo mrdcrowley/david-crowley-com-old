@@ -281,6 +281,7 @@ footer {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
   filter: alpha(opacity=75);
 }
+/* =Media =Queries */
 @media all and (max-device-width: 851px) {
   header {
     padding-left: 2em;
