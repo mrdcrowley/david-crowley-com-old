@@ -140,14 +140,11 @@ header {
   overflow: hidden;
   padding-left: 100px;
   text-shadow: 0px -1px 0px #242424;
-  -webkit-transition: height 0.2s ease-out;
-  -moz-transition: height 0.2s ease-out;
-  -o-transition: height 0.2s ease-out;
-  -ms-transition: height 0.2s ease-out;
-  transition: height 0.2s ease-out;
-}
-header.waitToAnimate {
-  height: 0;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 header h1 {
   font: 600 1.5em/1 'Raleway', sans-serif;
