@@ -1,4 +1,4 @@
-# david-crowley.com (new, in progress)
+# david-crowley.com
 
 > node app.js
 
