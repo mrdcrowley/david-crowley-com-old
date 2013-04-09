@@ -55,10 +55,13 @@ header
 		span
 			font-size: 4em
 			z-index: 100
-			text-shadow: .04em .04em 0 #9cb8b3
+			text-shadow -.04em -.04em 0 #9cb8b3
 			transition all animationSpeed ease-out
 			&:hover
-				text-shadow: -.04em -.04em 0 #9cb8b3
+				text-shadow .04em .04em 0 #9cb8b3
+			&:active
+				top: -200px
+				text-shadow none
 		span,
 		span:after
 			font-weight: 900
@@ -73,16 +76,16 @@ header
 			color rgba(255,255,255,.25)
 			text-shadow: none
 			position: absolute
-			left: .0875em
-			top: .0875em
+			left: -.0875em
+			top: -.0875em
 			z-index: -1;
 			-webkit-mask-image: url(http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png)
 			transition all animationSpeed ease-out
 		span:hover:after
 			top 0
 			left 0
-			left: -.0875em
-			top: -.0875em
+			left: .0875em
+			top: .0875em
 	.byline
 		color rgba(255,255,255,.5)
 		font-family Arvo
