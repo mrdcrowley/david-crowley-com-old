@@ -229,6 +229,13 @@ header .byline {
   padding-top: 20px;
 }
 #content h2 {
+  color: rgba(0,0,0,0.2);
+  font-family: Arvo, Georgia, sans-serif;
+  font-size: 240%;
+  font-style: italic;
+  font-weight: bold;
+}
+#content h3 {
   background: rgba(0,0,0,0.2);
   clear: both;
   font-family: Arvo, Georgia, sans-serif;
@@ -236,7 +243,7 @@ header .byline {
   font-weight: 700;
   padding: 0.5em;
 }
-#content h3 {
+#content h4 {
   clear: both;
   font-size: 140%;
   font-weight: 700;
