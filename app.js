@@ -33,11 +33,11 @@ app.get('/', function (req, res) {
   )
 })
 
-app.get('/work', function(req, res) {
+app.get('/work', function (req, res) {
     res.render('work', { 
         title : 'Work',
         cssID : 'pageWork'
-    });
-});
+    })
+})
 
 app.listen(3000)
