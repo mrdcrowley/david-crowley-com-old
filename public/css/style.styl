@@ -17,6 +17,8 @@ animationSpeed = .2s
 
 
 /* =Text */
+body 
+	line-height: 150%
 a
 	color colorLink
 	transition color animationSpeed ease-out
@@ -26,13 +28,16 @@ p, h1, h2, h3, h4, h5, h6
 	margin-bottom 1em
 p
 .list li
-	line-height: 140%
 	&:last-child
 		margin-bottom 3em
 .list li
 	margin-bottom 1em
 .small
-	font-size: 80%;
+	font-size: 80%
+ul
+	list-style none
+	margin 0
+	padding 0
 
 
 /* =Structure */
@@ -43,6 +48,7 @@ body
 header
 	background url('/img/headerBg.png') bottom
 	height 0
+	margin-bottom 2em
 	overflow: hidden
 	padding-left 100px
 	text-shadow 0px -1px 0px darken(colorHeader, 30%)
@@ -97,9 +103,7 @@ header
 #contact
 	ul
 		li
-			font-size 250%
 			font-weight 700
-			line-height 200%
 			a
 				color colorHeader
 				text-decoration none
@@ -109,7 +113,7 @@ header
 #content
 	clear both
 	float left
-	padding-top 20px
+	width 75%
 	h2
 		color rgba(0,0,0,.2)
 		font-family fontAlt
@@ -127,6 +131,11 @@ header
 		clear both
 		font-size: 140%
 		font-weight 700
+
+#sidebar
+	float right
+	width 20%
+
 footer
 	clear both
 	font-size 80%
@@ -135,6 +144,35 @@ footer
 	padding-top 5em
 	text-align center
 
+
+/* =Posts */
+ul.posts
+	margin-bottom 3em
+	li
+		border-bottom 1px solid rgba(0,0,0,.05)
+		font-family fontAlt
+		padding 40px 0
+		margin 0
+		&.quote
+			color lighten(colorHeader, 50%)
+			font-size: 125%
+			line-height 160%
+		&:first-child
+			padding-top 0
+		p:last-child 
+			margin-bottom 0
+		img
+			background #fff
+			max-height 800px
+			max-width (100% - 6px)
+			padding 20px
+
+/* =pageWork =work */
+#pageWork
+	#content
+		width 100%
+		#sidebar
+			display none
 
 /* =Utilities */
 .one-half

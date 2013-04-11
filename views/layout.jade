@@ -4,7 +4,7 @@ html
 		title #{title} - David Crowley
 		link(rel='stylesheet', href='/css/style.css')
 
-	body
+	body(id='#{cssID}')
 		header.waitToAnimate
 			a(href='/')
 				h1
@@ -13,6 +13,9 @@ html
 		#container
 			#content
 				block content
+				block tumblr
+			#sidebar
+				block links
 		footer
 			p Running on node with Express, Jade and Stylus
 			p <a href="https://github.com/mrdcrowley/david-crowley-com">Fork on Github</a> | <a href="/work/">Portfolio</a>
