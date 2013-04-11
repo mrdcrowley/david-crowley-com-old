@@ -1,11 +1,12 @@
 {
   "name": "david-crowley.com",
-  "version": "1.2.3-13",
+  "version": "1.2.3-16",
   "private": "true",
   "dependencies": {
     "express": "3.0.0alpha4",
     "jade": "*",
     "stylus": "*",
+    "tumblrwks": "*",
     "nib": "*"
   },
   "main": "app.js",
