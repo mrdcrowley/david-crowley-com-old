@@ -18,7 +18,7 @@ animationSpeed = .2s
 
 /* =Text */
 body 
-	line-height: 140%
+	line-height: 150%
 a
 	color colorLink
 	transition color animationSpeed ease-out
@@ -149,14 +149,30 @@ footer
 ul.posts
 	margin-bottom 3em
 	li
-		border-bottom 1px solid #ccc
-		box-shadow 0px 1px 1px rgba(255,255,255,.75)
-		padding 2em 0
+		border-bottom 1px solid rgba(0,0,0,.05)
+		font-family fontAlt
+		padding 40px 0
 		margin 0
+		&.quote
+			color lighten(colorHeader, 50%)
+			font-size: 125%
+			line-height 160%
+		&:first-child
+			padding-top 0
 		p:last-child 
 			margin-bottom 0
 		img
-			max-width 100%
+			background #fff
+			max-height 800px
+			max-width (100% - 6px)
+			padding 20px
+
+/* =pageWork =work */
+#pageWork
+	#content
+		width 100%
+		#sidebar
+			display none
 
 /* =Utilities */
 .one-half
