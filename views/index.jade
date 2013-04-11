@@ -34,7 +34,7 @@ block tumblr
 				- if ( id.type == 'photo' )
 					each photo in id.photos
 						a(href='#{photo.alt_sizes[0].url}')
-							img(src='#{photo.alt_sizes[0].url}')
+							img(data-original="#{photo.alt_sizes[0].url}", height="auto", width="auto", src="/img/placeholder.gif")
 						p
 							!{id.caption}
 					#{id.title}
