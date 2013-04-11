@@ -11,26 +11,48 @@ block links
 			li
 				a(href="http://twitter.com/mrdcrowley") @mrdcrowley
 			li
-				a(href="http://slantback.tumblr.com/") tumblr
+				a(href="http://slantback.tumblr.com/") Tumblr
 			li
 				a(href="https://github.com/mrdcrowley/") GitHub
 			li
-				a(href="http://www.youtube.com/user/slantback/videos") Youtube
+				a(href="http://www.youtube.com/user/slantback/videos") YouTube
 
 block content
 
 block tumblr
 	h3 Blog
-	ul
+	ul.posts
 		- each id in postsTumblr
-			li.post
+			li
+				//- LINKS
+				- if ( id.type == 'link' )
+					p
+						a(href='#{id.url}') !{id.title}
+					p
+						!{id.description}
+				//- PHOTOS
 				- if ( id.type == 'photo' )
 					each photo in id.photos
 						a(href='#{photo.alt_sizes[0].url}')
-							img(src='#{photo.alt_sizes[1].url}')
-						p !{id.caption}
-				#{id.title}
-				!{id.text}
+							img(src='#{photo.alt_sizes[0].url}')
+						p
+							!{id.caption}
+					#{id.title}
+					!{id.text}
+				//- QUOTES
+				- if ( id.type == 'quote' )
+					p
+						!{id.text}
+					p
+						!{id.source}
+				//- VIDEOS
+				- if ( id.type == 'video' )
+					!{id.player[0].embed_code}
+					p
+						!{id.caption}
+	p.subtle
+		| More on 
+		a( href='http://slantback.tumblr.com/') slantback.tumblr.com
 
 block twitter
 	p
