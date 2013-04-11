@@ -17,6 +17,8 @@ animationSpeed = .2s
 
 
 /* =Text */
+body 
+	line-height: 140%
 a
 	color colorLink
 	transition color animationSpeed ease-out
@@ -26,13 +28,16 @@ p, h1, h2, h3, h4, h5, h6
 	margin-bottom 1em
 p
 .list li
-	line-height: 140%
 	&:last-child
 		margin-bottom 3em
 .list li
 	margin-bottom 1em
 .small
-	font-size: 80%;
+	font-size: 80%
+ul
+	list-style none
+	margin 0
+	padding 0
 
 
 /* =Structure */
@@ -43,6 +48,7 @@ body
 header
 	background url('/img/headerBg.png') bottom
 	height 0
+	margin-bottom 2em
 	overflow: hidden
 	padding-left 100px
 	text-shadow 0px -1px 0px darken(colorHeader, 30%)
@@ -97,9 +103,7 @@ header
 #contact
 	ul
 		li
-			font-size 250%
 			font-weight 700
-			line-height 200%
 			a
 				color colorHeader
 				text-decoration none
@@ -109,7 +113,7 @@ header
 #content
 	clear both
 	float left
-	padding-top 20px
+	width 75%
 	h2
 		color rgba(0,0,0,.2)
 		font-family fontAlt
@@ -127,6 +131,11 @@ header
 		clear both
 		font-size: 140%
 		font-weight 700
+
+#sidebar
+	float right
+	width 20%
+
 footer
 	clear both
 	font-size 80%
@@ -135,6 +144,12 @@ footer
 	padding-top 5em
 	text-align center
 
+
+/* =Posts */
+li.post
+	padding 1em
+	margin 1em
+	border-bottom 1px solid #666
 
 /* =Utilities */
 .one-half

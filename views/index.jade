@@ -1,19 +1,11 @@
 extends layout
 
-block contact
-	#contact
-		ul.list
-			li
-				a(href="mailto:david@slantback.net") david@slantback.net
-			li
-				a(href="http://slantback.tumblr.com") slantback.tumblr.com
-			li
-				a(href="http://twitter.com/mrdcrowley") twitter.com/mrdcrowley
 
-block content
-	#contact
-		ul
-			li.subtle Hello.
+
+block links
+	#links
+		h3 Links
+		ul.list
 			li
 				a(href="mailto:david@slantback.net") david@slantback.net
 			li
@@ -25,11 +17,20 @@ block content
 			li
 				a(href="http://www.youtube.com/user/slantback/videos") Youtube
 
+block content
+
 block tumblr
-	h2 Tumblr
-	p
-		| Vivamus hendrerit arcu sed erat molestie
-		| vehicula.
+	h3 Blog
+	ul
+		- each id in postsTumblr
+			li.post
+				- if ( id.type == 'photo' )
+					each photo in id.photos
+						a(href='#{photo.alt_sizes[0].url}')
+							img(src='#{photo.alt_sizes[1].url}')
+						p !{id.caption}
+				#{id.title}
+				!{id.text}
 
 block twitter
 	p
