@@ -2,7 +2,6 @@ extends layout
 
 block links
 	#links
-		h3 Links
 		ul.list
 			li
 				a(href="mailto:david@slantback.net") david@slantback.net
@@ -40,7 +39,7 @@ block tumblr
 				- if ( post.type == 'quote' )
 					p
 						!{post.text}
-					p
+					p.source
 						!{post.source}
 				//- VIDEOS
 				- if ( post.type == 'video' )

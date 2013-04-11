@@ -1,5 +1,5 @@
 # david-crowley.com
 
-> node app.js
+> node server.js
 
 Template from https://github.com/clocklimited/BasicExpressSite

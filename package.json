@@ -11,9 +11,6 @@
   },
   "main": "app.js",
   "subdomain": "david-crowley-com",
-  "scripts": {
-    "start": "node app.js"
-  },
   "engines": {
     "node": "0.8.x"
   },

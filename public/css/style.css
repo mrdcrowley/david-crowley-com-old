@@ -280,6 +280,18 @@ ul.posts li.quote {
   font-size: 125%;
   line-height: 160%;
 }
+ul.posts li.quote .source a {
+  display: block;
+  padding: 0.5em;
+}
+ul.posts li.quote .source a:hover {
+  background: #00a6cd;
+  color: #fff;
+  text-decoration: none;
+}
+ul.posts li.quote .source a:hover:after {
+  content: " →";
+}
 ul.posts li:first-child {
   padding-top: 0;
 }

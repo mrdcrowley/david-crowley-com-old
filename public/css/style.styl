@@ -10,7 +10,7 @@ global-reset()
 colorBackground = #faf9f0
 colorLink = #00a6cd
 colorHeader = #333
-colorMain = #fa5b4d
+colorMain = #333
 fontBody = 'Noto Sans', Georgia, sans-serif
 fontAlt = Arvo, Georgia, sans-serif
 animationSpeed = .2s
@@ -157,6 +157,16 @@ ul.posts
 			color lighten(colorHeader, 50%)
 			font-size: 125%
 			line-height 160%
+			.source
+				a
+					display block
+					padding .5em
+					&:hover
+						background colorLink
+						color #fff
+						text-decoration none
+						&:after
+							content " →"
 		&:first-child
 			padding-top 0
 		p:last-child 
