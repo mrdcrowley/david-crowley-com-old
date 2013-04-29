@@ -9,16 +9,25 @@ html
 			a(href='/')
 				h1
 					span(data-shadow-text="David Crowley") David Crowley
-			p.byline Interaction designer, charmed by simplicity in digital interactions
+			p.byline
+				| Interaction designer, charmed by simplicity in digital interactions.<br/>
+				| Found at 
+				a(href="mailto:david@slantback.net") david@slantback.net
+				| , 
+				a(href="http://twitter.com/mrdcrowley") @mrdcrowley
+				| , 
+				a(href="http://github.com/mrdcrowley") GitHub
+				| , 
+				a(href="http://slantback.tumblr.com/") Tumblr
+				|  and 
+				a(href="http://www.youtube.com/user/slantback/videos") YouTube
+				| .
 		#container
 			#content
 				block content
 				block tumblr
-			#sidebar
-				block links
 		footer
-			p Running on node with Express, Jade and Stylus
-			p <a href="https://github.com/mrdcrowley/david-crowley-com">Fork on Github</a> | <a href="/work/">Portfolio</a>
+			p <a href="https://github.com/mrdcrowley/david-crowley-com">View on Github</a> | <a href="/work/">Portfolio</a>
 
 	block scripts
 		script(src='/js/jquery.js')

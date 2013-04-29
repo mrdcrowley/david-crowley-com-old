@@ -1,22 +1,9 @@
 extends layout
 
-block links
-	#links
-		ul.list
-			li
-				a(href="mailto:david@slantback.net") david@slantback.net
-			li
-				a(href="http://twitter.com/mrdcrowley") @mrdcrowley
-			li
-				a(href="http://slantback.tumblr.com/") Tumblr
-			li
-				a(href="https://github.com/mrdcrowley/") GitHub
-			li
-				a(href="http://www.youtube.com/user/slantback/videos") YouTube
-
 block content
 
 block tumblr
+	h2 Blog
 	ul.posts
 		- each post in postsTumblr
 			li(class='#{post.type}')

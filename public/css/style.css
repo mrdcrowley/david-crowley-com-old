@@ -94,9 +94,6 @@ a img {
 }
 /* =Variables */
 /* =Text */
-body {
-  line-height: 150%;
-}
 a {
   color: #00a6cd;
   -webkit-transition: color 0.2s ease-out;
@@ -106,7 +103,7 @@ a {
   transition: color 0.2s ease-out;
 }
 a:hover {
-  color: #007490;
+  color: #00bfeb;
 }
 p,
 h1,
@@ -117,33 +114,42 @@ h5,
 h6 {
   margin-bottom: 1em;
 }
-p:last-child,
-.list li:last-child {
-  margin-bottom: 3em;
+em {
+  font-style: italic;
 }
-.list li {
-  margin-bottom: 1em;
-}
-.small {
-  font-size: 80%;
+strong {
+  font-weight: bold;
 }
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+#container p,
+.list {
+  padding-bottom: 1em;
+}
+#container p li,
+.list li {
+  margin-bottom: 1em;
+}
+.small {
+  font-size: 80%;
+}
 /* =Structure */
 body {
-  font-family: 'Noto Sans', Georgia, sans-serif;
   background: #faf9f0;
   color: #444;
+  font-family: 'Noto Sans', Georgia, sans-serif;
+  line-height: 150%;
+  min-width: 600px;
 }
 header {
   background: url("/img/headerBg.png") bottom;
-  height: 0;
-  margin-bottom: 2em;
-  overflow: hidden;
-  padding-left: 100px;
+  margin-bottom: 4em;
+  padding: 1em 100px;
+  padding-bottom: 3em;
+  text-align: center;
   text-shadow: 0px -1px 0px #242424;
   -webkit-transition: height 0.2s linear;
   -moz-transition: height 0.2s linear;
@@ -152,15 +158,15 @@ header {
   transition: height 0.2s linear;
 }
 header h1 {
-  font: 600 1.5em/1 'Raleway', sans-serif;
   color: rgba(0,0,0,0.5);
+  font: 600 1.5em/1 'Raleway', sans-serif;
   letter-spacing: 0.5em;
   margin: 0;
 }
 header h1 span {
-  font-size: 4em;
+  font-size: 2.5em;
   z-index: 100;
-  text-shadow: -0.04em -0.04em 0 #9cb8b3;
+  text-shadow: 0 0.08em 0 #9cb8b3;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -168,7 +174,7 @@ header h1 span {
   transition: all 0.2s ease-out;
 }
 header h1 span:hover {
-  text-shadow: 0.04em 0.04em 0 #9cb8b3;
+  text-shadow: 0 0.04em 0 #9cb8b3;
 }
 header h1 span:active {
   top: -200px;
@@ -189,8 +195,8 @@ header h1 span:after {
   color: rgba(255,255,255,0.25);
   text-shadow: none;
   position: absolute;
-  left: -0.0875em;
-  top: -0.0875em;
+  left: 0;
+  top: 0.165em;
   z-index: -1;
   -webkit-mask-image: url("http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png");
   -webkit-transition: all 0.2s ease-out;
@@ -200,16 +206,20 @@ header h1 span:after {
   transition: all 0.2s ease-out;
 }
 header h1 span:hover:after {
-  top: 0;
   left: 0;
-  left: 0.0875em;
   top: 0.0875em;
 }
-header .byline {
-  color: rgba(255,255,255,0.5);
+header p.byline {
+  color: #707070;
   font-family: Arvo;
-  padding-left: 5px;
-  margin-bottom: 20px;
+  margin: 0;
+}
+header p.byline a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+}
+header p.byline a:hover {
+  color: #efedce;
 }
 #container {
   padding-left: 100px;
@@ -229,7 +239,8 @@ header .byline {
 #content {
   clear: both;
   float: left;
-  width: 75%;
+  text-align: center;
+  width: 100%;
 }
 #content h2 {
   color: rgba(0,0,0,0.2);
@@ -237,6 +248,8 @@ header .byline {
   font-size: 240%;
   font-style: italic;
   font-weight: bold;
+  text-align: center;
+  padding-bottom: 0.5em;
 }
 #content h3 {
   background: rgba(0,0,0,0.2);
@@ -248,12 +261,14 @@ header .byline {
 }
 #content h4 {
   clear: both;
+  color: #666;
   font-size: 140%;
   font-weight: 700;
 }
-#sidebar {
-  float: right;
-  width: 20%;
+#content h5 {
+  color: #666;
+  font-weight: bold;
+  margin: 0;
 }
 footer {
   clear: both;
@@ -300,26 +315,40 @@ ul.posts li p:last-child {
 }
 ul.posts li img {
   background: #fff;
-  max-height: 800px;
   max-width: 94%;
   padding: 20px;
 }
 /* =pageWork =work */
 #pageWork #content {
-  width: 100%;
+  text-align: left;
 }
-#pageWork #content #sidebar {
-  display: none;
+#pageWork .heart {
+  color: #f00;
+}
+#pageWork #products li.one-half p {
+  margin-right: 2em;
 }
 /* =Utilities */
 .one-half {
-  width: 49%;
+  clear: none;
+  float: left;
+  width: 45%;
 }
 .one-third {
+  clear: none;
+  float: left;
   width: 33%;
 }
 .two-thirds {
+  clear: none;
+  float: left;
   width: 66%;
+}
+.clear {
+  clear: both;
+}
+.center {
+  text-align: center;
 }
 .left {
   float: left;
@@ -328,14 +357,26 @@ ul.posts li img {
   float: right;
 }
 .thumb {
-  border: 1px solid rgba(0,0,0,0.05);
-  float: right;
-  margin-bottom: 4em;
+  height: auto;
+  margin-bottom: 2em;
+  outline: 10px solid #fff;
+  -webkit-transition: outline 0.2s ease-out;
+  -moz-transition: outline 0.2s ease-out;
+  -o-transition: outline 0.2s ease-out;
+  -ms-transition: outline 0.2s ease-out;
+  transition: outline 0.2s ease-out;
+}
+.thumb.left {
+  margin-right: 2em;
+}
+.thumb.right {
   margin-left: 2em;
-  max-width: 62%;
 }
 .thumb.small {
-  max-width: 30%;
+  max-width: 300px;
+}
+a .thumb:hover {
+  outline: 10px solid #00bfeb;
 }
 .nowrap {
   white-space: nowrap;

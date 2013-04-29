@@ -9,6 +9,7 @@ global-reset()
 /* =Variables */
 colorBackground = #faf9f0
 colorLink = #00a6cd
+colorLinkHover = lighten(colorLink, 10%)
 colorHeader = #333
 colorMain = #333
 fontBody = 'Noto Sans', Georgia, sans-serif
@@ -17,54 +18,57 @@ animationSpeed = .2s
 
 
 /* =Text */
-body 
-	line-height: 150%
 a
 	color colorLink
 	transition color animationSpeed ease-out
 	&:hover
-		color darken(colorLink, 30%)
+		color colorLinkHover
 p, h1, h2, h3, h4, h5, h6
 	margin-bottom 1em
-p
-.list li
-	&:last-child
-		margin-bottom 3em
-.list li
-	margin-bottom 1em
-.small
-	font-size: 80%
+em
+	font-style italic
+strong
+	font-weight bold
 ul
 	list-style none
 	margin 0
 	padding 0
+#container p
+.list
+	padding-bottom 1em
+	li
+		margin-bottom 1em
+.small
+	font-size: 80%
 
 
 /* =Structure */
 body
-	font-family fontBody
 	background colorBackground
 	color #444
+	font-family fontBody
+	line-height 150%
+	min-width 600px
 header
 	background url('/img/headerBg.png') bottom
-	height 0
-	margin-bottom 2em
-	overflow: hidden
-	padding-left 100px
+	margin-bottom 4em
+	padding 1em 100px
+	padding-bottom 3em
+	text-align center
 	text-shadow 0px -1px 0px darken(colorHeader, 30%)
 	transition height animationSpeed linear
 	h1
-		font: 600 1.5em/1 'Raleway', sans-serif
 		color: rgba(0,0,0,.5)
+		font: 600 1.5em/1 'Raleway', sans-serif
 		letter-spacing: .5em
 		margin 0
 		span
-			font-size: 4em
+			font-size: 2.5em
 			z-index: 100
-			text-shadow -.04em -.04em 0 #9cb8b3
+			text-shadow 0 .08em 0 #9cb8b3
 			transition all animationSpeed ease-out
 			&:hover
-				text-shadow .04em .04em 0 #9cb8b3
+				text-shadow 0 .04em 0 #9cb8b3
 			&:active
 				top: -200px
 				text-shadow none
@@ -82,21 +86,23 @@ header
 			color rgba(255,255,255,.25)
 			text-shadow: none
 			position: absolute
-			left: -.0875em
-			top: -.0875em
+			left 0
+			top .1650em
 			z-index: -1;
 			-webkit-mask-image: url(http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png)
 			transition all animationSpeed ease-out
 		span:hover:after
-			top 0
 			left 0
-			left: .0875em
 			top: .0875em
-	.byline
-		color rgba(255,255,255,.5)
+	p.byline
+		color lighten(colorHeader,30%)
 		font-family Arvo
-		padding-left 5px
-		margin-bottom 20px
+		margin 0
+		a
+			color rgba(255,255,255,.5)
+			text-decoration none
+			&:hover
+				color #efedce
 #container
 	padding-left 100px
 	padding-right 100px
@@ -113,13 +119,16 @@ header
 #content
 	clear both
 	float left
-	width 75%
+	text-align center
+	width 100%
 	h2
 		color rgba(0,0,0,.2)
 		font-family fontAlt
 		font-size 240%
 		font-style italic
 		font-weight bold
+		text-align center
+		padding-bottom .5em
 	h3
 		background rgba(0,0,0,.2)
 		clear both
@@ -129,12 +138,13 @@ header
 		padding .5em
 	h4
 		clear both
+		color #666
 		font-size: 140%
 		font-weight 700
-
-#sidebar
-	float right
-	width 20%
+	h5
+		color #666
+		font-weight bold
+		margin 0
 
 footer
 	clear both
@@ -173,38 +183,56 @@ ul.posts
 			margin-bottom 0
 		img
 			background #fff
-			max-height 800px
 			max-width (100% - 6px)
 			padding 20px
 
 /* =pageWork =work */
 #pageWork
 	#content
-		width 100%
-		#sidebar
-			display none
+		text-align left
+	.heart
+		color red
+	#products
+		li.one-half
+			p
+				margin-right 2em
 
 /* =Utilities */
 .one-half
-	width 49%
+	clear none
+	float left
+	width 45%
 .one-third
+	clear none
+	float left
 	width 33%
 .two-thirds
+	clear none
+	float left
 	width 66%
-
+.clear
+	clear both
+.center
+	text-align center
 .left
 	float left
 .right
 	float right
 
 .thumb
-	border 1px solid rgba(0,0,0,.05)
-	float right
-	margin-bottom 4em
-	margin-left 2em
-	max-width 62%
+	height auto
+	margin-bottom 2em
+	outline 10px solid #fff
+	transition outline animationSpeed ease-out
+	&.left
+		margin-right 2em
+	&.right
+		margin-left 2em
 	&.small
-		max-width 30%
+		max-width 300px
+	a &:hover
+		outline 10px solid colorLinkHover
+
 
 .nowrap
 	white-space nowrap
