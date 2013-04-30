@@ -295,16 +295,20 @@ ul.posts li.quote {
   font-size: 125%;
   line-height: 160%;
 }
-ul.posts li.quote .source a {
+ul.posts li.quote .source a:first-child {
   display: block;
   padding: 0.5em;
 }
-ul.posts li.quote .source a:hover {
+ul.posts li.quote .source a:first-child.tumblr_blog {
+  display: inline;
+  padding: 0;
+}
+ul.posts li.quote .source a:first-child:hover {
   background: #00a6cd;
   color: #fff;
   text-decoration: none;
 }
-ul.posts li.quote .source a:hover:after {
+ul.posts li.quote .source a:first-child:hover:after {
   content: " →";
 }
 ul.posts li:first-child {

@@ -48,6 +48,13 @@ app.get('/work', function (req, res) {
 	})
 })
 
+app.get('/portfolio', function (req, res) {
+	res.render('work', {
+		title : 'Portfolio',
+		cssID : 'pageWork'
+	})
+})
+
 function getTumblrPosts(){
 	tumblr.get('/posts', {hostname: 'slantback.tumblr.com'}, function(json){
 		postsTumblr = json.posts

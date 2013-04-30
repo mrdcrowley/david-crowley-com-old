@@ -168,9 +168,12 @@ ul.posts
 			font-size: 125%
 			line-height 160%
 			.source
-				a
+				a:first-child
 					display block
 					padding .5em
+					&.tumblr_blog
+						display inline
+						padding 0
 					&:hover
 						background colorLink
 						color #fff
