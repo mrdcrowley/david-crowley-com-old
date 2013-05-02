@@ -396,11 +396,12 @@ a .thumb:hover {
     padding-left: 2em;
   }
   #container {
-    padding: 2em;
+    padding: 0 2em;
   }
   .one-half,
   .one-third,
   .two-thirds {
+    float: none;
     width: auto;
   }
   .left,
@@ -408,12 +409,15 @@ a .thumb:hover {
     float: none;
   }
   .thumb,
-  .thumb.small {
+  .thumb.small,
+  .thumb.left,
+  .thumb.right {
     float: none;
     height: auto;
     margin: 0;
     margin-bottom: 1em;
     max-width: 100%;
+    outline: 0;
     width: 100%;
   }
 }
