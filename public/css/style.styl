@@ -182,9 +182,9 @@ ul.posts
 		p:last-child 
 			margin-bottom 0
 		img
-			background #fff
-			max-width (100% - 6px)
-			padding 20px
+			background-color #fff
+			max-width (100% - 30px)
+			padding 15px
 
 /* =pageWork =work */
 #pageWork
@@ -196,12 +196,19 @@ ul.posts
 		li.one-half
 			p
 				margin-right 2em
+	#research
+		&.list .one-third p 
+			padding-right 2em
+	iframe
+		background-color #fff
+		max-width (100% - 30px)
+		padding 15px
 
 /* =Utilities */
 .one-half
 	clear none
 	float left
-	width 45%
+	width w = 45%
 .one-third
 	clear none
 	float left
@@ -210,31 +217,34 @@ ul.posts
 	clear none
 	float left
 	width 66%
-.clear
-	clear both
 .center
 	text-align center
+.clear
+	clear both
 .left
 	float left
+.nowrap
+	white-space nowrap
 .right
 	float right
+.subtle
+	opacity .75
 .thumb
+	background-color #fff
 	height auto
-	margin-bottom 2em
-	outline 10px solid #fff
-	transition outline animationSpeed ease-out
+	margin-bottom 1em
+	max-width (100% - 30px)
+	padding 15px
+	position relative
+	transition background-color animationSpeed ease-out
 	&.left
-		margin-right 2em
+		margin-right 1em
 	&.right
-		margin-left 2em
+		margin-left 1em
 	&.small
 		max-width 300px
 	a &:hover
-		outline 10px solid colorLinkHover
-.nowrap
-	white-space nowrap
-.subtle
-	opacity .75
+		background-color colorLinkHover
 
 
 /* =Boxer =Modal */
