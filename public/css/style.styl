@@ -50,7 +50,7 @@ body
 	line-height 150%
 	min-width 600px
 header
-	background url('/img/headerBg.png') bottom
+	background transparent url('/img/headerBg.png') bottom repeat-x
 	margin-bottom 4em
 	padding 1em 100px
 	padding-bottom 3em
@@ -68,10 +68,7 @@ header
 			text-shadow 0 .08em 0 #9cb8b3
 			transition all animationSpeed ease-out
 			&:hover
-				text-shadow 0 .04em 0 #9cb8b3
-			&:active
-				top: -200px
-				text-shadow none
+				// text-shadow 0 .04em 0 #9cb8b3
 		span,
 		span:after
 			font-weight: 900
@@ -92,8 +89,8 @@ header
 			-webkit-mask-image: url(http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png)
 			transition all animationSpeed ease-out
 		span:hover:after
-			left 0
-			top: .0875em
+			// left 0
+			// top: .0875em
 	p.byline
 		color lighten(colorHeader,30%)
 		font-family Arvo
@@ -221,7 +218,6 @@ ul.posts
 	float left
 .right
 	float right
-
 .thumb
 	height auto
 	margin-bottom 2em
@@ -235,20 +231,24 @@ ul.posts
 		max-width 300px
 	a &:hover
 		outline 10px solid colorLinkHover
-
-
 .nowrap
 	white-space nowrap
-
 .subtle
 	opacity .75
+
+
+/* =Boxer =Modal */
+#boxer .boxer-close
+	display none
 	
 
 /* =Media =Queries */
 
 @media all and (max-device-width: 851px)
+	body
+		font-size 180%
 	header
-		padding-left 2em
+		padding 1em
 	#container
 		padding 0 2em
 	.one-half,

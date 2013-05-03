@@ -145,7 +145,7 @@ body {
   min-width: 600px;
 }
 header {
-  background: url("/img/headerBg.png") bottom;
+  background: transparent url("/img/headerBg.png") bottom repeat-x;
   margin-bottom: 4em;
   padding: 1em 100px;
   padding-bottom: 3em;
@@ -173,13 +173,6 @@ header h1 span {
   -ms-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-header h1 span:hover {
-  text-shadow: 0 0.04em 0 #9cb8b3;
-}
-header h1 span:active {
-  top: -200px;
-  text-shadow: none;
-}
 header h1 span,
 header h1 span:after {
   font-weight: 900;
@@ -204,10 +197,6 @@ header h1 span:after {
   -o-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
-}
-header h1 span:hover:after {
-  left: 0;
-  top: 0.0875em;
 }
 header p.byline {
   color: #707070;
@@ -390,10 +379,17 @@ a .thumb:hover {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
   filter: alpha(opacity=75);
 }
+/* =Boxer =Modal */
+#boxer .boxer-close {
+  display: none;
+}
 /* =Media =Queries */
 @media all and (max-device-width: 851px) {
+  body {
+    font-size: 180%;
+  }
   header {
-    padding-left: 2em;
+    padding: 1em;
   }
   #container {
     padding: 0 2em;
