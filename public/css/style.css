@@ -138,7 +138,7 @@ ul {
 }
 /* =Structure */
 body {
-  background: #faf9f0;
+  background: #faf9f0 url("/img/bg.png");
   color: #444;
   font-family: 'Noto Sans', Georgia, sans-serif;
   line-height: 150%;
@@ -146,9 +146,10 @@ body {
 }
 header {
   background: transparent url("/img/headerBg.png") bottom repeat-x;
-  margin-bottom: 4em;
-  padding: 1em 100px;
-  padding-bottom: 3em;
+  border-top: 0.25em solid #005b71;
+  margin-bottom: 3em;
+  padding: 0.5em 100px;
+  padding-bottom: 2em;
   text-align: center;
   text-shadow: 0px -1px 0px #242424;
   -webkit-transition: height 0.2s linear;
@@ -164,9 +165,9 @@ header h1 {
   margin: 0;
 }
 header h1 span {
-  font-size: 2.5em;
+  font-size: 1.5em;
   z-index: 100;
-  text-shadow: 0 0.08em 0 #9cb8b3;
+  text-shadow: 0 0.08em 0 #666;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -176,7 +177,7 @@ header h1 span {
 header h1 span,
 header h1 span:after {
   font-weight: 900;
-  color: #efedce;
+  color: #faf9f0;
   white-space: nowrap;
   display: inline-block;
   position: relative;
@@ -232,13 +233,13 @@ header p.byline a:hover {
   width: 100%;
 }
 #content h2 {
-  color: rgba(0,0,0,0.2);
-  font-family: Arvo, Georgia, sans-serif;
-  font-size: 240%;
-  font-style: italic;
-  font-weight: bold;
-  text-align: center;
-  padding-bottom: 0.5em;
+  background: rgba(0,0,0,0.1);
+  display: inline-block;
+  font-size: 125%;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 3em;
+  padding: 1em;
 }
 #content h3 {
   background: rgba(0,0,0,0.2);
@@ -269,44 +270,96 @@ footer {
   padding-top: 5em;
   text-align: center;
 }
-/* =Posts */
-ul.posts {
+/* =Blog */
+.blogPost {
+  background: rgba(0,0,0,0.05);
+  color: #999;
+  font-family: Arvo, Georgia, sans-serif;
+  font-size: 125%;
+  line-height: 160%;
+  margin-bottom: 3em;
+  overflow: hidden;
+  padding: 1em;
+  padding-bottom: 0;
+  text-align: left;
+}
+.blogPost .meta {
+  clear: both;
+  color: #b8b8b8;
+  font-family: 'Noto Sans', Georgia, sans-serif;
+  font-size: 75%;
+  margin: 0;
+}
+.blogPost .meta a {
+  color: #b8b8b8;
+}
+.blogPost .meta a:hover {
+  text-decoration: underline;
+}
+.blogPost h4 {
+  margin: 0;
+}
+.blogPost h4 a {
+  color: #444;
+  font-family: 'Noto Sans', Georgia, sans-serif;
+  display: inline;
+  text-decoration: none;
+}
+.blogPost h4 a:hover {
+  text-decoration: underline;
+}
+#blogList {
+  clear: both;
+}
+#blogList ul.list li {
+  border-top: 1px solid rgba(0,0,0,0.05);
+  display: block;
+  margin: 0;
+  padding: 1em 0;
+}
+#blogList ul.list li .meta {
+  float: right;
+}
+/* =tumblr */
+#tumblr ul.posts {
   margin-bottom: 3em;
 }
-ul.posts li {
+#tumblr ul.posts li {
   border-bottom: 1px solid rgba(0,0,0,0.05);
+  color: #858585;
   font-family: Arvo, Georgia, sans-serif;
+  line-height: 170%;
   padding: 40px 0;
   margin: 0;
 }
-ul.posts li.quote {
+#tumblr ul.posts li.quote {
   color: #999;
   font-size: 125%;
-  line-height: 160%;
+  line-height: 170%;
 }
-ul.posts li.quote .source a:first-child {
+#tumblr ul.posts li.quote .source a:first-child {
   display: block;
   padding: 0.5em;
 }
-ul.posts li.quote .source a:first-child.tumblr_blog {
+#tumblr ul.posts li.quote .source a:first-child.tumblr_blog {
   display: inline;
   padding: 0;
 }
-ul.posts li.quote .source a:first-child:hover {
+#tumblr ul.posts li.quote .source a:first-child:hover {
   background: #00a6cd;
   color: #fff;
   text-decoration: none;
 }
-ul.posts li.quote .source a:first-child:hover:after {
+#tumblr ul.posts li.quote .source a:first-child:hover:after {
   content: " →";
 }
-ul.posts li:first-child {
+#tumblr ul.posts li:first-child {
   padding-top: 0;
 }
-ul.posts li p:last-child {
+#tumblr ul.posts li p:last-child {
   margin-bottom: 0;
 }
-ul.posts li img {
+#tumblr ul.posts li img {
   background-color: #fff;
   max-width: 70%;
   padding: 15px;
