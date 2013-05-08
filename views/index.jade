@@ -3,11 +3,12 @@ extends layout
 block content
 
 block blogPost
+	h2 Latest post
 	include includes/blogPost
 
 block tumblr
 	div#tumblr
-		h2 Tumblr
+		h2 Tumblrs
 		ul.posts
 			- each post in postsTumblr
 				li(class='#{post.type}')

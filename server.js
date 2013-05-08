@@ -56,28 +56,14 @@ app.get('/portfolio', function (req, res) {
 })
 
 poet.set({
-  posts: './_posts/',  // Directory of posts
-  postsPerPage: 5,     // Posts per page in pagination
-  metaFormat: 'json',  // meta formatter for posts
-  readMoreLink: function (post) {
-    // readMoreLink is a function that
-    // takes the post object and formats an anchor
-    // to be used to append to a post's preview blurb
-    // and returns the anchor text string
-  },
-  readMoreTag: '<!--more-->' // tag used to generate
-  // the preview. More in 'preview' section
-})
-  .createPostRoute()
-  .createPageRoute()
-  .createTagRoute()
-  .createCategoryRoute()
-  .init(function ( locals ) {
-    // Some callback to run once everything is set up
-    // The core storage is passed in as an argument,
-    // where all the locals/middleware functions
-    //and stores can be altered
-  });
+	postsPerPage : 3,
+	posts        : './_posts',
+	metaFormat   : 'json'
+}).createPostRoute( '/post/:post', 'post' )
+	.createPageRoute( '/page/:page', 'page' )
+	.createTagRoute( '/tag/:tag', 'tag' )
+	.createCategoryRoute( '/category/:category', 'category' )
+	.init();
 
 function getTumblrPosts(){
 	tumblr.get('/posts', {hostname: 'slantback.tumblr.com'}, function(json){

@@ -114,6 +114,15 @@ h5,
 h6 {
   margin-bottom: 1em;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #666;
+  font-family: 'Noto Sans', Georgia, sans-serif;
+}
 em {
   font-style: italic;
 }
@@ -139,9 +148,9 @@ ul {
 /* =Structure */
 body {
   background: #faf9f0 url("/img/bg.png");
-  color: #444;
-  font-family: 'Noto Sans', Georgia, sans-serif;
-  line-height: 150%;
+  color: #999;
+  font-family: Arvo, Georgia, sans-serif;
+  line-height: 170%;
   min-width: 600px;
 }
 header {
@@ -244,19 +253,16 @@ header p.byline a:hover {
 #content h3 {
   background: rgba(0,0,0,0.2);
   clear: both;
-  font-family: Arvo, Georgia, sans-serif;
   font-size: 180%;
   font-weight: 700;
   padding: 0.5em;
 }
 #content h4 {
   clear: both;
-  color: #666;
   font-size: 140%;
   font-weight: 700;
 }
 #content h5 {
-  color: #666;
   font-weight: bold;
   margin: 0;
 }
@@ -274,7 +280,6 @@ footer {
 .blogPost {
   background: rgba(0,0,0,0.05);
   color: #999;
-  font-family: Arvo, Georgia, sans-serif;
   font-size: 125%;
   line-height: 160%;
   margin-bottom: 3em;
@@ -282,19 +287,6 @@ footer {
   padding: 1em;
   padding-bottom: 0;
   text-align: left;
-}
-.blogPost .meta {
-  clear: both;
-  color: #b8b8b8;
-  font-family: 'Noto Sans', Georgia, sans-serif;
-  font-size: 75%;
-  margin: 0;
-}
-.blogPost .meta a {
-  color: #b8b8b8;
-}
-.blogPost .meta a:hover {
-  text-decoration: underline;
 }
 .blogPost h4 {
   margin: 0;
@@ -308,6 +300,18 @@ footer {
 .blogPost h4 a:hover {
   text-decoration: underline;
 }
+.meta {
+  clear: both;
+  color: #b8b8b8;
+  font-size: 75%;
+  margin: 0;
+}
+.meta a {
+  color: #b8b8b8;
+}
+.meta a:hover {
+  text-decoration: underline;
+}
 #blogList {
   clear: both;
 }
@@ -316,6 +320,7 @@ footer {
   display: block;
   margin: 0;
   padding: 1em 0;
+  text-align: left;
 }
 #blogList ul.list li .meta {
   float: right;
@@ -326,14 +331,10 @@ footer {
 }
 #tumblr ul.posts li {
   border-bottom: 1px solid rgba(0,0,0,0.05);
-  color: #858585;
-  font-family: Arvo, Georgia, sans-serif;
-  line-height: 170%;
   padding: 40px 0;
   margin: 0;
 }
 #tumblr ul.posts li.quote {
-  color: #999;
   font-size: 125%;
   line-height: 170%;
 }
