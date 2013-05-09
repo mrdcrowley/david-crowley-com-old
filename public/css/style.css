@@ -277,28 +277,30 @@ footer {
   text-align: center;
 }
 /* =Blog */
-.blogPost {
-  background: rgba(0,0,0,0.05);
+.blog {
   color: #999;
   font-size: 125%;
   line-height: 160%;
   margin-bottom: 3em;
-  overflow: hidden;
-  padding: 1em;
-  padding-bottom: 0;
   text-align: left;
 }
-.blogPost h4 {
+.blog h4 {
   margin: 0;
 }
-.blogPost h4 a {
+.blog h4 a {
   color: #444;
   font-family: 'Noto Sans', Georgia, sans-serif;
   display: inline;
   text-decoration: none;
 }
-.blogPost h4 a:hover {
+.blog h4 a:hover {
   text-decoration: underline;
+}
+.blogPreview {
+  background: rgba(0,0,0,0.05);
+  overflow: hidden;
+  padding: 1em;
+  padding-bottom: 0;
 }
 .meta {
   clear: both;

@@ -1,4 +1,4 @@
-div.blog.blogPost
+div.blog.blogPreview
 	- var posts = getPosts(0,1)
 	- each post in posts
 		h4
@@ -8,4 +8,4 @@ div.blog.blogPost
 			- each tag in post.tags
 				a( href= tagUrl( tag )) !{tag}
 				| 
-		!{post.content}
+		!{post.preview}
