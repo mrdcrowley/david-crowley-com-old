@@ -29,6 +29,10 @@ p, h1, h2, h3, h4, h5, h6
 h1, h2, h3, h4, h5, h6
 	color #666
 	font-family fontAlt
+code
+	background rgba(0,0,0,.05)
+	font-family: Consolas, monospace;
+	padding 0 .25em
 em
 	font-style italic
 strong
@@ -185,13 +189,18 @@ footer
 			text-decoration underline
 #blogList
 	clear both
+	text-align left
 	ul.list
 		li
 			border-top 1px solid rgba(0,0,0,.05)
 			display block
 			margin 0
-			padding 1em 0
-			text-align left
+			padding 1em
+			&.active
+				background rgba(0,0,0,.05)
+				a
+					color colorBody
+					text-decoration none
 			.meta
 				float right
 
@@ -260,6 +269,12 @@ footer
 	clear none
 	float left
 	width 66%
+.bullets
+	list-style-type disc
+	li
+		margin-top 1em
+		margin-left 1em
+		padding-left .25em
 .center
 	text-align center
 .clear

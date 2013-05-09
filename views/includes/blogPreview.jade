@@ -7,5 +7,5 @@ div.blog.blogPreview
 			#{post.date.getMonth()+1}, #{post.date.getDate()} #{post.date.getFullYear()} 
 			- each tag in post.tags
 				a( href= tagUrl( tag )) !{tag}
-				| 
+				| , 
 		!{post.preview}

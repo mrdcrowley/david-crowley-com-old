@@ -58,7 +58,11 @@ app.get('/portfolio', function (req, res) {
 poet.set({
 	postsPerPage : 3,
 	posts        : './_posts',
-	metaFormat   : 'json'
+	metaFormat   : 'json',
+	readMoreLink : function ( post ) {
+      var anchor = '<a href="'+post.url+'" title="Read more of '+post.title+'" class="more">More &rarr;</a>';
+      return '<p>' + anchor + '</p>';
+    }
 }).createPostRoute( '/post/:post', 'post' )
 	.createPageRoute( '/page/:page', 'page' )
 	.createTagRoute( '/tag/:tag', 'tag' )

@@ -1,12 +1,22 @@
 - var title = 'Posts'
 - var cssID = 'blogList'
+- var currentPost = post.title
+- var currentClass
 
+h2 Archive
 div#blogList
 	ul.list
 		- var posts = getPosts(0)
 		- each post in posts
-			li
-				a(href=post.url) !{post.title}
-				span.meta
-					- each tag in post.tags
-						!{tag}, 
+			- if (post.title == currentPost)
+				li.active
+					a(href=post.url) !{post.title}
+					span.meta
+						- each tag in post.tags
+							!{tag},
+			-else 
+				li
+					a(href=post.url) !{post.title}
+					span.meta
+						- each tag in post.tags
+							!{tag}, 
