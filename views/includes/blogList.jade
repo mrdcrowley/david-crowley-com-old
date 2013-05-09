@@ -3,7 +3,7 @@
 - var currentPost = post.title
 - var currentClass
 
-h2 Archive
+h2 Older
 div#blogList
 	ul.list
 		- var posts = getPosts(0)
@@ -13,10 +13,10 @@ div#blogList
 					a(href=post.url) !{post.title}
 					span.meta
 						- each tag in post.tags
-							!{tag},
+							!{tag} 
 			-else 
 				li
 					a(href=post.url) !{post.title}
 					span.meta
 						- each tag in post.tags
-							!{tag}, 
+							!{tag} 

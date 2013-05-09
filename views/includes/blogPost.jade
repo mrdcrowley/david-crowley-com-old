@@ -1,9 +1,10 @@
+- var monthName = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+
 div.blog.blogPost
-		h4
-			a(href=post.url) !{post.title}
-		p.meta
-			#{post.date.getMonth()+1}, #{post.date.getDate()} #{post.date.getFullYear()} 
-			- each tag in post.tags
-				a( href= tagUrl( tag )) !{tag}
-				| , 
-		!{post.content}
+	h4
+		a(href=post.url) !{post.title}
+	p.meta
+		- var monthNumber = post.date.getMonth()
+		- var month = monthName[monthNumber]
+		#{month}, #{post.date.getDate()} #{post.date.getFullYear()} 
+	!{post.content}

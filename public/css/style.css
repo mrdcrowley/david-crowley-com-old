@@ -141,7 +141,7 @@ ul {
 }
 #container p,
 .list {
-  padding-bottom: 1em;
+  margin-bottom: 1em;
 }
 #container p li,
 .list li {
