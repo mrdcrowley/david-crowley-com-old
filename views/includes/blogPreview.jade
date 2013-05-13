@@ -7,5 +7,5 @@ div.blog.blogPreview
 		p.meta
 			- var monthNumber = post.date.getMonth()
 			- var month = monthName[monthNumber]
-			#{month} #{post.date.getDate()}, #{post.date.getFullYear()}
+			span #{month} #{post.date.getDate()}, #{post.date.getFullYear()}
 		!{post.preview}

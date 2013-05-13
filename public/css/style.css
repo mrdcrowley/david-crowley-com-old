@@ -152,7 +152,7 @@ ul {
 }
 /* =Structure */
 body {
-  background: #faf9f0 url("/img/bg.png");
+  background: #f5f5f5 url("/img/bg.png");
   color: #999;
   font-family: Arvo, Georgia, sans-serif;
   line-height: 170%;
@@ -191,7 +191,7 @@ header h1 span {
 header h1 span,
 header h1 span:after {
   font-weight: 900;
-  color: #faf9f0;
+  color: #f5f5f5;
   white-space: nowrap;
   display: inline-block;
   position: relative;
