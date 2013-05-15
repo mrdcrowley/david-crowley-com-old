@@ -7,13 +7,14 @@ global-reset()
 
 
 /* =Variables */
-colorBackground = #faf9f0
+colorBackground = rgba(245,245,245,1)
+colorBody = #444
 colorLink = #00a6cd
 colorLinkHover = lighten(colorLink, 10%)
 colorHeader = #333
 colorMain = #333
-fontBody = 'Noto Sans', Georgia, sans-serif
-fontAlt = Arvo, Georgia, sans-serif
+fontBody = Arvo, Georgia, sans-serif
+fontAlt = 'Noto Sans', Georgia, sans-serif
 animationSpeed = .2s
 
 
@@ -25,6 +26,13 @@ a
 		color colorLinkHover
 p, h1, h2, h3, h4, h5, h6
 	margin-bottom 1em
+h1, h2, h3, h4, h5, h6
+	color #666
+	font-family fontAlt
+code
+	background rgba(0,0,0,.05)
+	font-family: Consolas, monospace;
+	padding 0 .25em
 em
 	font-style italic
 strong
@@ -35,7 +43,7 @@ ul
 	padding 0
 #container p
 .list
-	padding-bottom 1em
+	margin-bottom 1em
 	li
 		margin-bottom 1em
 .small
@@ -44,16 +52,17 @@ ul
 
 /* =Structure */
 body
-	background colorBackground
-	color #444
+	background colorBackground url('/img/bg.png')
+	color lighten(colorHeader, 50%)
 	font-family fontBody
-	line-height 150%
+	line-height 170%
 	min-width 600px
 header
 	background transparent url('/img/headerBg.png') bottom repeat-x
-	margin-bottom 4em
-	padding 1em 100px
-	padding-bottom 3em
+	border-top .25em solid darken(colorLink, 45%)
+	margin-bottom 3em
+	padding .5em 100px
+	padding-bottom 2em
 	text-align center
 	text-shadow 0px -1px 0px darken(colorHeader, 30%)
 	transition height animationSpeed linear
@@ -63,16 +72,16 @@ header
 		letter-spacing: .5em
 		margin 0
 		span
-			font-size: 2.5em
+			font-size: 1.5em
 			z-index: 100
-			text-shadow 0 .08em 0 #9cb8b3
+			text-shadow 0 .08em 0 #666
 			transition all animationSpeed ease-out
 			&:hover
 				// text-shadow 0 .04em 0 #9cb8b3
 		span,
 		span:after
 			font-weight: 900
-			color: #efedce
+			color: colorBackground
 			white-space: nowrap
 			display: inline-block
 			position: relative
@@ -119,27 +128,24 @@ header
 	text-align center
 	width 100%
 	h2
-		color rgba(0,0,0,.2)
-		font-family fontAlt
-		font-size 240%
-		font-style italic
-		font-weight bold
-		text-align center
-		padding-bottom .5em
+		background rgba(0,0,0,.1)
+		display inline-block
+		font-size 125%
+		font-style normal
+		font-weight 700
+		margin-bottom 3em
+		padding 1em
 	h3
 		background rgba(0,0,0,.2)
 		clear both
-		font-family fontAlt
 		font-size 180%
 		font-weight 700
 		padding .5em
 	h4
 		clear both
-		color #666
 		font-size: 140%
 		font-weight 700
 	h5
-		color #666
 		font-weight bold
 		margin 0
 
@@ -151,40 +157,86 @@ footer
 	padding-top 5em
 	text-align center
 
-
-/* =Posts */
-ul.posts
+/* =Blog */
+.blog
+	color lighten(colorHeader, 50%)
+	font-size: 125%
+	line-height 160%
 	margin-bottom 3em
-	li
-		border-bottom 1px solid rgba(0,0,0,.05)
-		font-family fontAlt
-		padding 40px 0
+	text-align left
+	h4
 		margin 0
-		&.quote
-			color lighten(colorHeader, 50%)
-			font-size: 125%
-			line-height 160%
-			.source
-				a:first-child
-					display block
-					padding .5em
-					&.tumblr_blog
-						display inline
-						padding 0
-					&:hover
-						background colorLink
-						color #fff
-						text-decoration none
-						&:after
-							content " →"
-		&:first-child
-			padding-top 0
-		p:last-child 
-			margin-bottom 0
-		img
-			background-color #fff
-			max-width (100% - 30px)
-			padding 15px
+		a
+			color colorBody
+			font-family fontAlt
+			display inline
+			text-decoration none
+			&:hover
+				text-decoration underline
+.blogPreview
+	background rgba(0,0,0,.05)
+	overflow hidden
+	padding 1em
+	padding-bottom 0
+.meta
+	clear both
+	color lighten(colorHeader, 65%)
+	font-size 75%
+	margin 0
+	a
+		color lighten(colorHeader, 65%)
+		&:hover
+			text-decoration underline
+#blogList
+	clear both
+	text-align left
+	ul.list
+		li
+			border-top 1px solid rgba(0,0,0,.05)
+			display block
+			margin 0
+			padding 1em
+			&.active
+				background rgba(0,0,0,.05)
+				a
+					color colorBody
+					text-decoration none
+			.meta
+				float right
+
+
+/* =tumblr */
+#tumblr
+	ul.posts
+		margin-bottom 3em
+		li
+			border-bottom 1px solid rgba(0,0,0,.05)
+			padding 40px 0
+			margin 0
+			&.quote
+				font-size: 125%
+				line-height 170%
+				.source
+					a:first-child
+						display block
+						padding .5em
+						&.tumblr_blog
+							display inline
+							padding 0
+						&:hover
+							background colorLink
+							color #fff
+							text-decoration none
+							&:after
+								content " →"
+			&:first-child
+				padding-top 0
+			p:last-child 
+				margin-bottom 0
+			img
+				background-color #fff
+				max-width (100% - 30px)
+				padding 15px
 
 /* =pageWork =work */
 #pageWork
@@ -217,6 +269,12 @@ ul.posts
 	clear none
 	float left
 	width 66%
+.bullets
+	list-style-type disc
+	li
+		margin-top 1em
+		margin-left 1em
+		padding-left .25em
 .center
 	text-align center
 .clear
@@ -254,9 +312,9 @@ ul.posts
 
 /* =Media =Queries */
 
-@media all and (max-device-width: 851px)
+@media all and (max-device-width: 751px)
 	body
-		font-size 180%
+		font-size 200%
 	header
 		padding 1em
 	#container

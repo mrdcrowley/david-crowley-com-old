@@ -5,8 +5,8 @@ var express = require('express')
 	, stylus = require('stylus')
 	, nib = require('nib')
 	, Tumblr = require('tumblrwks')
-
-var app = express();
+	, app = express()
+	, poet = require('poet')( app )
 
 var tumblr = new Tumblr(
 	{
@@ -54,6 +54,20 @@ app.get('/portfolio', function (req, res) {
 		cssID : 'pageWork'
 	})
 })
+
+poet.set({
+	postsPerPage : 3,
+	posts        : './_posts',
+	metaFormat   : 'json',
+	readMoreLink : function ( post ) {
+      var anchor = '<a href="'+post.url+'" title="Read more of '+post.title+'" class="more">More &rarr;</a>';
+      return '<p>' + anchor + '</p>';
+    }
+}).createPostRoute( '/post/:post', 'post' )
+	.createPageRoute( '/page/:page', 'page' )
+	.createTagRoute( '/tag/:tag', 'tag' )
+	.createCategoryRoute( '/category/:category', 'category' )
+	.init();
 
 function getTumblrPosts(){
 	tumblr.get('/posts', {hostname: 'slantback.tumblr.com'}, function(json){

@@ -1,0 +1,11 @@
+div.blog.blogPreview
+	- var posts = getPosts(0,1)
+	- var monthName = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+	- each post in posts
+		h4
+			a(href=post.url) !{post.title}
+		p.meta
+			- var monthNumber = post.date.getMonth()
+			- var month = monthName[monthNumber]
+			span #{month} #{post.date.getDate()}, #{post.date.getFullYear()}
+		!{post.preview}

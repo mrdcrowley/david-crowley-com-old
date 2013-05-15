@@ -2,43 +2,8 @@ extends layout
 
 block content
 
+block blogPreview
+	include includes/blogPreview
+
 block tumblr
-	h2 Blog
-	ul.posts
-		- each post in postsTumblr
-			li(class='#{post.type}')
-				//- LINKS
-				- if ( post.type == 'link' )
-					p
-						a(href='#{post.url}') !{post.title}
-					p
-						!{post.description}
-				//- PHOTOS
-				- if ( post.type == 'photo' )
-					each photo in post.photos
-						a(href='#{photo.alt_sizes[0].url}')
-							img(data-original="#{photo.alt_sizes[0].url}", height="auto", width="auto", src="/img/placeholder.gif")
-						p
-							!{post.caption}
-					#{post.title}
-					!{post.text}
-				//- QUOTES
-				- if ( post.type == 'quote' )
-					p
-						!{post.text}
-					p.source
-						!{post.source}
-				//- VIDEOS
-				- if ( post.type == 'video' )
-					!{post.player[0].embed_code}
-					p
-						!{post.caption}
-	p.subtle
-		| More on 
-		a( href='http://slantback.tumblr.com/') slantback.tumblr.com
-
-block twitter
-	p
-		| Vivamus hendrerit arcu sed erat molestie
-		| vehicula.
-
+	include includes/tumblr

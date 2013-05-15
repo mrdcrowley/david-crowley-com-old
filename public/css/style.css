@@ -114,6 +114,20 @@ h5,
 h6 {
   margin-bottom: 1em;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #666;
+  font-family: 'Noto Sans', Georgia, sans-serif;
+}
+code {
+  background: rgba(0,0,0,0.05);
+  font-family: Consolas, monospace;
+  padding: 0 0.25em;
+}
 em {
   font-style: italic;
 }
@@ -127,7 +141,7 @@ ul {
 }
 #container p,
 .list {
-  padding-bottom: 1em;
+  margin-bottom: 1em;
 }
 #container p li,
 .list li {
@@ -138,17 +152,18 @@ ul {
 }
 /* =Structure */
 body {
-  background: #faf9f0;
-  color: #444;
-  font-family: 'Noto Sans', Georgia, sans-serif;
-  line-height: 150%;
+  background: #f5f5f5 url("/img/bg.png");
+  color: #999;
+  font-family: Arvo, Georgia, sans-serif;
+  line-height: 170%;
   min-width: 600px;
 }
 header {
   background: transparent url("/img/headerBg.png") bottom repeat-x;
-  margin-bottom: 4em;
-  padding: 1em 100px;
-  padding-bottom: 3em;
+  border-top: 0.25em solid #005b71;
+  margin-bottom: 3em;
+  padding: 0.5em 100px;
+  padding-bottom: 2em;
   text-align: center;
   text-shadow: 0px -1px 0px #242424;
   -webkit-transition: height 0.2s linear;
@@ -164,9 +179,9 @@ header h1 {
   margin: 0;
 }
 header h1 span {
-  font-size: 2.5em;
+  font-size: 1.5em;
   z-index: 100;
-  text-shadow: 0 0.08em 0 #9cb8b3;
+  text-shadow: 0 0.08em 0 #666;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -176,7 +191,7 @@ header h1 span {
 header h1 span,
 header h1 span:after {
   font-weight: 900;
-  color: #efedce;
+  color: #f5f5f5;
   white-space: nowrap;
   display: inline-block;
   position: relative;
@@ -232,30 +247,27 @@ header p.byline a:hover {
   width: 100%;
 }
 #content h2 {
-  color: rgba(0,0,0,0.2);
-  font-family: Arvo, Georgia, sans-serif;
-  font-size: 240%;
-  font-style: italic;
-  font-weight: bold;
-  text-align: center;
-  padding-bottom: 0.5em;
+  background: rgba(0,0,0,0.1);
+  display: inline-block;
+  font-size: 125%;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 3em;
+  padding: 1em;
 }
 #content h3 {
   background: rgba(0,0,0,0.2);
   clear: both;
-  font-family: Arvo, Georgia, sans-serif;
   font-size: 180%;
   font-weight: 700;
   padding: 0.5em;
 }
 #content h4 {
   clear: both;
-  color: #666;
   font-size: 140%;
   font-weight: 700;
 }
 #content h5 {
-  color: #666;
   font-weight: bold;
   margin: 0;
 }
@@ -269,44 +281,100 @@ footer {
   padding-top: 5em;
   text-align: center;
 }
-/* =Posts */
-ul.posts {
-  margin-bottom: 3em;
-}
-ul.posts li {
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  font-family: Arvo, Georgia, sans-serif;
-  padding: 40px 0;
-  margin: 0;
-}
-ul.posts li.quote {
+/* =Blog */
+.blog {
   color: #999;
   font-size: 125%;
   line-height: 160%;
+  margin-bottom: 3em;
+  text-align: left;
 }
-ul.posts li.quote .source a:first-child {
+.blog h4 {
+  margin: 0;
+}
+.blog h4 a {
+  color: #444;
+  font-family: 'Noto Sans', Georgia, sans-serif;
+  display: inline;
+  text-decoration: none;
+}
+.blog h4 a:hover {
+  text-decoration: underline;
+}
+.blogPreview {
+  background: rgba(0,0,0,0.05);
+  overflow: hidden;
+  padding: 1em;
+  padding-bottom: 0;
+}
+.meta {
+  clear: both;
+  color: #b8b8b8;
+  font-size: 75%;
+  margin: 0;
+}
+.meta a {
+  color: #b8b8b8;
+}
+.meta a:hover {
+  text-decoration: underline;
+}
+#blogList {
+  clear: both;
+  text-align: left;
+}
+#blogList ul.list li {
+  border-top: 1px solid rgba(0,0,0,0.05);
+  display: block;
+  margin: 0;
+  padding: 1em;
+}
+#blogList ul.list li.active {
+  background: rgba(0,0,0,0.05);
+}
+#blogList ul.list li.active a {
+  color: #444;
+  text-decoration: none;
+}
+#blogList ul.list li .meta {
+  float: right;
+}
+/* =tumblr */
+#tumblr ul.posts {
+  margin-bottom: 3em;
+}
+#tumblr ul.posts li {
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 40px 0;
+  margin: 0;
+}
+#tumblr ul.posts li.quote {
+  font-size: 125%;
+  line-height: 170%;
+}
+#tumblr ul.posts li.quote .source a:first-child {
   display: block;
   padding: 0.5em;
 }
-ul.posts li.quote .source a:first-child.tumblr_blog {
+#tumblr ul.posts li.quote .source a:first-child.tumblr_blog {
   display: inline;
   padding: 0;
 }
-ul.posts li.quote .source a:first-child:hover {
+#tumblr ul.posts li.quote .source a:first-child:hover {
   background: #00a6cd;
   color: #fff;
   text-decoration: none;
 }
-ul.posts li.quote .source a:first-child:hover:after {
+#tumblr ul.posts li.quote .source a:first-child:hover:after {
   content: " →";
 }
-ul.posts li:first-child {
+#tumblr ul.posts li:first-child {
   padding-top: 0;
 }
-ul.posts li p:last-child {
+#tumblr ul.posts li p:last-child {
   margin-bottom: 0;
 }
-ul.posts li img {
+#tumblr ul.posts li img {
   background-color: #fff;
   max-width: 70%;
   padding: 15px;
@@ -344,6 +412,14 @@ ul.posts li img {
   clear: none;
   float: left;
   width: 66%;
+}
+.bullets {
+  list-style-type: disc;
+}
+.bullets li {
+  margin-top: 1em;
+  margin-left: 1em;
+  padding-left: 0.25em;
 }
 .center {
   text-align: center;
@@ -395,9 +471,9 @@ a .thumb:hover {
   display: none;
 }
 /* =Media =Queries */
-@media all and (max-device-width: 851px) {
+@media all and (max-device-width: 751px) {
   body {
-    font-size: 180%;
+    font-size: 200%;
   }
   header {
     padding: 1em;
