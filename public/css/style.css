@@ -441,9 +441,9 @@ footer {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
   filter: alpha(opacity=75);
 }
-.thumb,
-iframe {
+.thumb {
   background-color: #fff;
+  height: auto;
   margin-bottom: 1em;
   max-width: 70%;
   padding: 15px;
@@ -454,20 +454,16 @@ iframe {
   -ms-transition: background-color 0.2s ease-out;
   transition: background-color 0.2s ease-out;
 }
-.thumb.left,
-iframe.left {
+.thumb.left {
   margin-right: 1em;
 }
-.thumb.right,
-iframe.right {
+.thumb.right {
   margin-left: 1em;
 }
-.thumb.small,
-iframe.small {
+.thumb.small {
   max-width: 300px;
 }
-a .thumb:hover,
-a iframe:hover {
+a .thumb:hover {
   background-color: #00bfeb;
 }
 /* =Boxer =Modal */
@@ -495,12 +491,12 @@ a iframe:hover {
   .right {
     float: none;
   }
-  iframe,
   .thumb,
   .thumb.small,
   .thumb.left,
   .thumb.right {
     float: none;
+    height: auto;
     margin: 0;
     margin-bottom: 1em;
     max-width: 100%;
