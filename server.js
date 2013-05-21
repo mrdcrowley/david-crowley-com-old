@@ -55,6 +55,13 @@ app.get('/portfolio', function (req, res) {
 	})
 })
 
+app.get('/timeline', function (req, res) {
+	res.render('timeline', {
+		title : 'Timeline',
+		cssID : 'pageTimeline'
+	})
+})
+
 poet.set({
 	postsPerPage : 3,
 	posts        : './_posts',
