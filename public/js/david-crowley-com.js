@@ -24,4 +24,19 @@ $(document).ready(function() {
 		lang:               'en',
 		maptype:            'watercolor'
 	});
+
+	// timeline map
+	$('#vmap').vectorMap({
+		map: 'world_en',
+		backgroundColor: 'transparent',
+		color: '#ccc',
+		hoverOpacity: 0.7,
+		selectedColor: '#333',
+		enableZoom: true,
+		showTooltip: true,
+		normalizeFunction: 'polynomial'
+	});
+
+	$('#vmap').vectorMap('set', 'colors', {eg: '#000'})
+
 });
