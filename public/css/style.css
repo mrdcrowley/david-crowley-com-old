@@ -393,9 +393,6 @@ footer {
 #pageWork #products li.one-half p {
   margin-right: 2em;
 }
-#pageWork #research.list .one-third p {
-  padding-right: 2em;
-}
 #pageWork iframe {
   background-color: #fff;
   max-width: 70%;
@@ -423,12 +420,12 @@ footer {
 .one-third {
   clear: none;
   float: left;
-  width: 33%;
+  width: 31%;
 }
 .two-thirds {
   clear: none;
   float: left;
-  width: 66%;
+  width: 64%;
 }
 .bullets {
   list-style-type: disc;
@@ -462,8 +459,6 @@ footer {
   background-color: #fff;
   height: auto;
   margin-bottom: 1em;
-  max-width: 70%;
-  padding: 15px;
   position: relative;
   -webkit-transition: background-color 0.2s ease-out;
   -moz-transition: background-color 0.2s ease-out;
