@@ -506,7 +506,8 @@ a .thumb:hover {
   .thumb,
   .thumb.small,
   .thumb.left,
-  .thumb.right {
+  .thumb.right,
+  img {
     float: none;
     height: auto;
     margin: 0;
