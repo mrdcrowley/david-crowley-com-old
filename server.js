@@ -7,6 +7,7 @@ var express = require('express')
 	, Tumblr = require('tumblrwks')
 	, app = express()
 	, poet = require('poet')( app )
+	, portfolio = require('./portfolio')
 
 var tumblr = new Tumblr(
 	{
@@ -41,20 +42,37 @@ app.get('/', function (req, res) {
 	getTumblrPosts()
 })
 
-app.get('/work', function (req, res) {
-	res.render('work', {
-		title : 'Work',
-		cssID : 'pageWork'
-	})
-})
 
-app.get('/portfolio', function (req, res) {
-	res.render('work', {
-		title : 'Portfolio',
-		cssID : 'pageWork'
-	})
-})
+// PORTFOLIO
+app.get('/work', portfolio.index) // old url, point to /portfolio
+app.get('/portfolio', portfolio.index)
+app.get('/portfolio/sharing', portfolio.sharing)
+app.get('/portfolio/companion', portfolio.companion)
 
+
+
+// app.get('/work', function (req, res) {
+// 	res.render('portfolio', {
+// 		title : 'Portfolio',
+// 		cssID : 'pageWork'
+// 	})
+// })
+
+// app.get('/portfolio', function (req, res) {
+// 	res.render('portfolio', {
+// 		title : 'Portfolio',
+// 		cssID : 'pageWork'
+// 	})
+// })
+
+// 	app.get('/portfolio/:id', function (req, res) {
+// 		res.render('includes/portSharing', {
+// 			title : 'U-Haul Move Sharing',
+// 			cssID : 'pagePiece'
+// 		})
+// 	})
+
+// TIMELINE
 app.get('/timeline', function (req, res) {
 	res.render('timeline', {
 		title : 'Timeline',
