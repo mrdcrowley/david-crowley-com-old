@@ -6,13 +6,16 @@ exports.index = function(req, res) {
 	})
 }
 
-exports.piece = function(req, res) {
-	
-	var id = req.params.id
+exports.sharing = function(req, res) {
+	res.render('includes/portSharing', {
+		title: 'U-Haul Trip Sharing',
+		cssID: 'pagePiece',
+	})
+}
 
-	res.render('includes/portfolioPiece', {
-		title: 'Portfolio',
-		cssID: 'portPiece',
-		piece: id
+exports.companion = function(req, res) {
+	res.render('includes/portCompanion', {
+		title: 'U-Haul Moving Companion',
+		cssID: 'pagePiece',
 	})
 }

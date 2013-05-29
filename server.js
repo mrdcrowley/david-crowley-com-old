@@ -44,8 +44,10 @@ app.get('/', function (req, res) {
 
 
 // PORTFOLIO
+app.get('/work', portfolio.index) // old url, point to /portfolio
 app.get('/portfolio', portfolio.index)
-app.get('/portfolio/:id', portfolio.piece)
+app.get('/portfolio/sharing', portfolio.sharing)
+app.get('/portfolio/companion', portfolio.companion)
 
 
 

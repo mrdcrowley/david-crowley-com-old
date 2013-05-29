@@ -149,6 +149,7 @@ ul li {
 #container p li,
 .list li {
   margin-bottom: 1em;
+  overflow: hidden;
 }
 .small {
   font-size: 80%;
@@ -246,7 +247,6 @@ header p.byline a:hover {
 #content {
   clear: both;
   float: left;
-  text-align: center;
   width: 100%;
 }
 #content h2 {
@@ -345,6 +345,7 @@ footer {
 /* =tumblr */
 #tumblr ul.posts {
   margin-bottom: 3em;
+  text-align: center;
 }
 #tumblr ul.posts li {
   border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -399,6 +400,19 @@ footer {
   background-color: #fff;
   max-width: 70%;
   padding: 15px;
+}
+/* =pagePiece */
+#pagePiece #content {
+  text-align: left;
+}
+#pagePiece h4 {
+  padding-top: 2em;
+}
+#pagePiece .list li {
+  border-top: 1px solid #ccc;
+  clear: both;
+  padding-bottom: 2em;
+  padding-top: 2em;
 }
 /* =Utilities */
 .one-half {

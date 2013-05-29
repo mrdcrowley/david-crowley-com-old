@@ -48,6 +48,7 @@ ul
 	margin-bottom 1em
 	li
 		margin-bottom 1em
+		overflow hidden
 .small
 	font-size: 80%
 
@@ -127,7 +128,6 @@ header
 #content
 	clear both
 	float left
-	text-align center
 	width 100%
 	h2
 		background rgba(0,0,0,.1)
@@ -211,6 +211,7 @@ footer
 #tumblr
 	ul.posts
 		margin-bottom 3em
+		text-align center
 		li
 			border-bottom 1px solid rgba(0,0,0,.05)
 			padding 40px 0
@@ -257,6 +258,20 @@ footer
 		background-color #fff
 		max-width (100% - 30px)
 		padding 15px
+
+/* =pagePiece */
+#pagePiece
+	#content
+		text-align left
+	h4
+		padding-top 2em
+	.list
+		li
+			border-top 1px solid #ccc
+			clear both
+			padding-bottom 2em
+			padding-top 2em
+
 
 /* =Utilities */
 .one-half
