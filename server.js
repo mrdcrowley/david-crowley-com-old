@@ -34,12 +34,22 @@ app.use(stylus.middleware(
 ))
 app.use(express.static(__dirname + '/public'))
 
+// TUMBLR
+getTumblrPosts()
+
+function getTumblrPosts(){
+	tumblr.get('/posts', {hostname: 'slantback.tumblr.com'}, function(json){
+		postsTumblr = json.posts
+	})
+}
+
+
+// INDEX
 app.get('/', function (req, res) {
 	res.render('index', {
 		title : 'Home',
 		cssID : 'pageHome'
 	})
-	getTumblrPosts()
 })
 
 
@@ -94,11 +104,5 @@ poet.set({
 	.createTagRoute( '/tag/:tag', 'tag' )
 	.createCategoryRoute( '/category/:category', 'category' )
 	.init();
-
-function getTumblrPosts(){
-	tumblr.get('/posts', {hostname: 'slantback.tumblr.com'}, function(json){
-		postsTumblr = json.posts
-	})
-}
 
 app.listen(3000)
