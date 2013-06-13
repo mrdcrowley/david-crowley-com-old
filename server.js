@@ -1,6 +1,4 @@
-/*
- * Module dependencies
- */
+// MODULES
 var express = require('express')
 	, stylus = require('stylus')
 	, nib = require('nib')
@@ -9,14 +7,8 @@ var express = require('express')
 	, poet = require('poet')( app )
 	, portfolio = require('./portfolio')
 
-var tumblr = new Tumblr(
-	{
-		consumerKey: 'wbv0QjwCd2yUEODaaUOXR8Ni7P8phsWUNzYZqnK4lNUVNMpA36'
-	}, "slantback.tumblr.com"
-)
 
-var refreshDelay = 100000 // refresh delay for tumblr posts
-
+// SETUP
 function compile(str, path) {
   return stylus(str)
 	.set('filename', path)
@@ -36,7 +28,18 @@ app.use(stylus.middleware(
 ))
 app.use(express.static(__dirname + '/public'))
 
-// TUMBLR
+
+// VARIABLES
+var refreshDelay = 100000 // refresh delay for tumblr posts
+
+
+// TUMBLR POSTS
+var tumblr = new Tumblr(
+	{
+		consumerKey: 'wbv0QjwCd2yUEODaaUOXR8Ni7P8phsWUNzYZqnK4lNUVNMpA36'
+	}, "slantback.tumblr.com"
+)
+
 var	getTumblrPosts = function getTumblrPosts(){
 	tumblr.get('/posts', {hostname: 'slantback.tumblr.com'}, function(json){
 		postsTumblr = json.posts
@@ -55,34 +58,12 @@ app.get('/', function (req, res) {
 
 
 // PORTFOLIO
-app.get('/work', portfolio.index) // old url, point to /portfolio
 app.get('/portfolio', portfolio.index)
 app.get('/portfolio/companion', portfolio.companion)
 app.get('/portfolio/intranet', portfolio.intranet)
 app.get('/portfolio/sharing', portfolio.sharing)
+app.get('/work', portfolio.index) // old url, point to /portfolio
 
-
-
-// app.get('/work', function (req, res) {
-// 	res.render('portfolio', {
-// 		title : 'Portfolio',
-// 		cssID : 'pageWork'
-// 	})
-// })
-
-// app.get('/portfolio', function (req, res) {
-// 	res.render('portfolio', {
-// 		title : 'Portfolio',
-// 		cssID : 'pageWork'
-// 	})
-// })
-
-// 	app.get('/portfolio/:id', function (req, res) {
-// 		res.render('includes/portSharing', {
-// 			title : 'U-Haul Move Sharing',
-// 			cssID : 'pagePiece'
-// 		})
-// 	})
 
 // TIMELINE
 app.get('/timeline', function (req, res) {
@@ -92,6 +73,7 @@ app.get('/timeline', function (req, res) {
 	})
 })
 
+// BLOG POSTS
 poet.set({
 	postsPerPage : 3,
 	posts        : './_posts',
@@ -106,7 +88,8 @@ poet.set({
 	.createCategoryRoute( '/category/:category', 'category' )
 	.init();
 
+// INIT
 getTumblrPosts();
-setInterval(getTumblrPosts,refreshDelay);
+setInterval(getTumblrPosts,refreshDelay); // keep getting new posts
 
 app.listen(3000)
