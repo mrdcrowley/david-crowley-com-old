@@ -15,6 +15,8 @@ var tumblr = new Tumblr(
 	}, "slantback.tumblr.com"
 )
 
+var refreshDelay = 100000 // refresh delay for tumblr posts
+
 function compile(str, path) {
   return stylus(str)
 	.set('filename', path)
@@ -35,12 +37,11 @@ app.use(stylus.middleware(
 app.use(express.static(__dirname + '/public'))
 
 // TUMBLR
-getTumblrPosts()
-
-function getTumblrPosts(){
+var	getTumblrPosts = function getTumblrPosts(){
 	tumblr.get('/posts', {hostname: 'slantback.tumblr.com'}, function(json){
 		postsTumblr = json.posts
 	})
+	console.log('tumblr posts updated')
 }
 
 
@@ -104,5 +105,8 @@ poet.set({
 	.createTagRoute( '/tag/:tag', 'tag' )
 	.createCategoryRoute( '/category/:category', 'category' )
 	.init();
+
+getTumblrPosts();
+setInterval(getTumblrPosts,refreshDelay);
 
 app.listen(3000)
