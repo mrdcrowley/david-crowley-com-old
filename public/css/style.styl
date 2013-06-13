@@ -9,8 +9,8 @@ global-reset()
 /* =Variables */
 colorBackground = rgba(245,245,245,1)
 colorBody = #444
-colorLink = #00a6cd
-colorLinkHover = lighten(colorLink, 10%)
+colorLink = #666
+colorLinkHover = #00a6cd
 colorHeader = #333
 colorMain = #333
 fontBody = Arvo, Georgia, sans-serif
@@ -22,6 +22,7 @@ animationSpeed = .2s
 a
 	color colorLink
 	transition color animationSpeed ease-out
+	transition background-color animationSpeed ease-out
 	&:hover
 		color colorLinkHover
 p, h1, h2, h3, h4, h5, h6
@@ -62,7 +63,7 @@ body
 	min-width 600px
 header
 	background transparent url('/img/headerBg.png') bottom repeat-x
-	border-top .25em solid darken(colorLink, 45%)
+	border-top .25em solid lighten(colorHeader, 15%)
 	margin-bottom 3em
 	padding .5em 100px
 	padding-bottom 2em
@@ -77,7 +78,6 @@ header
 		span
 			font-size: 1.5em
 			z-index: 100
-			text-shadow 0 .08em 0 #666
 			transition all animationSpeed ease-out
 			&:hover
 				// text-shadow 0 .04em 0 #9cb8b3
@@ -96,13 +96,10 @@ header
 			text-shadow: none
 			position: absolute
 			left 0
-			top .1650em
+			top 3px
 			z-index: -1;
 			-webkit-mask-image: url(http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png)
 			transition all animationSpeed ease-out
-		span:hover:after
-			// left 0
-			// top: .0875em
 	p.byline
 		color lighten(colorHeader,30%)
 		font-family Arvo
@@ -111,7 +108,7 @@ header
 			color rgba(255,255,255,.5)
 			text-decoration none
 			&:hover
-				color #efedce
+				color colorLinkHover
 #container
 	padding-left 100px
 	padding-right 100px
@@ -227,11 +224,9 @@ footer
 							display inline
 							padding 0
 						&:hover
-							background colorLink
+							background colorLinkHover
 							color #fff
 							text-decoration none
-							&:after
-								content " →"
 			&:first-child
 				padding-top 0
 			p:last-child 
@@ -241,8 +236,8 @@ footer
 				max-width (100% - 30px)
 				padding 15px
 
-/* =pageWork =work */
-#pageWork
+/* =portfolio */
+#portfolio
 	#content
 		text-align left
 	.heart

@@ -95,15 +95,20 @@ a img {
 /* =Variables */
 /* =Text */
 a {
-  color: #00a6cd;
+  color: #666;
   -webkit-transition: color 0.2s ease-out;
   -moz-transition: color 0.2s ease-out;
   -o-transition: color 0.2s ease-out;
   -ms-transition: color 0.2s ease-out;
   transition: color 0.2s ease-out;
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  -ms-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
 }
 a:hover {
-  color: #00bfeb;
+  color: #00a6cd;
 }
 p,
 h1,
@@ -164,7 +169,7 @@ body {
 }
 header {
   background: transparent url("/img/headerBg.png") bottom repeat-x;
-  border-top: 0.25em solid #005b71;
+  border-top: 0.25em solid #525252;
   margin-bottom: 3em;
   padding: 0.5em 100px;
   padding-bottom: 2em;
@@ -185,7 +190,6 @@ header h1 {
 header h1 span {
   font-size: 1.5em;
   z-index: 100;
-  text-shadow: 0 0.08em 0 #666;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -208,7 +212,7 @@ header h1 span:after {
   text-shadow: none;
   position: absolute;
   left: 0;
-  top: 0.165em;
+  top: 3px;
   z-index: -1;
   -webkit-mask-image: url("http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png");
   -webkit-transition: all 0.2s ease-out;
@@ -227,7 +231,7 @@ header p.byline a {
   text-decoration: none;
 }
 header p.byline a:hover {
-  color: #efedce;
+  color: #00a6cd;
 }
 #container {
   padding-left: 100px;
@@ -241,7 +245,7 @@ header p.byline a:hover {
   text-decoration: none;
 }
 #contact ul li a:hover {
-  color: #00a6cd;
+  color: #666;
   text-shadow: #fff -1px -1px 0;
 }
 #content {
@@ -369,9 +373,6 @@ footer {
   color: #fff;
   text-decoration: none;
 }
-#tumblr ul.posts li.quote .source a:first-child:hover:after {
-  content: " →";
-}
 #tumblr ul.posts li:first-child {
   padding-top: 0;
 }
@@ -383,17 +384,17 @@ footer {
   max-width: 70%;
   padding: 15px;
 }
-/* =pageWork =work */
-#pageWork #content {
+/* =portfolio */
+#portfolio #content {
   text-align: left;
 }
-#pageWork .heart {
+#portfolio .heart {
   color: #f00;
 }
-#pageWork #products li.one-half p {
+#portfolio #products li.one-half p {
   margin-right: 2em;
 }
-#pageWork iframe {
+#portfolio iframe {
   background-color: #fff;
   max-width: 70%;
   padding: 15px;
@@ -476,7 +477,7 @@ footer {
   max-width: 300px;
 }
 a .thumb:hover {
-  background-color: #00bfeb;
+  background-color: #00a6cd;
 }
 /* =Boxer =Modal */
 #boxer .boxer-close {
