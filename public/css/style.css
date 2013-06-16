@@ -1,5 +1,6 @@
-@import url("http://fonts.googleapis.com/css?family=Raleway:600,900");
 @import url("http://fonts.googleapis.com/css?family=Arvo");
+@import url("http://fonts.googleapis.com/css?family=GFS+Didot");
+@import url("http://fonts.googleapis.com/css?family=Raleway:600,900");
 @import url("http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic");
 html,
 body,
@@ -95,15 +96,20 @@ a img {
 /* =Variables */
 /* =Text */
 a {
-  color: #00a6cd;
+  color: #666;
   -webkit-transition: color 0.2s ease-out;
   -moz-transition: color 0.2s ease-out;
   -o-transition: color 0.2s ease-out;
   -ms-transition: color 0.2s ease-out;
   transition: color 0.2s ease-out;
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  -ms-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
 }
 a:hover {
-  color: #00bfeb;
+  color: #333;
 }
 p,
 h1,
@@ -160,78 +166,53 @@ body {
   color: #999;
   font-family: Arvo, Georgia, sans-serif;
   line-height: 170%;
-  min-width: 600px;
 }
 header {
   background: transparent url("/img/headerBg.png") bottom repeat-x;
-  border-top: 0.25em solid #005b71;
+  border-top: 0.25em solid #525252;
   margin-bottom: 3em;
-  padding: 0.5em 100px;
-  padding-bottom: 2em;
+  padding: 0.5em;
+  padding-bottom: 0;
   text-align: center;
   text-shadow: 0px -1px 0px #242424;
-  -webkit-transition: height 0.2s linear;
-  -moz-transition: height 0.2s linear;
-  -o-transition: height 0.2s linear;
-  -ms-transition: height 0.2s linear;
-  transition: height 0.2s linear;
 }
-header h1 {
-  color: rgba(0,0,0,0.5);
-  font: 600 1.5em/1 'Raleway', sans-serif;
-  letter-spacing: 0.5em;
-  margin: 0;
+header #logo a {
+  background: transparent url("/img/logo.png");
+  display: block;
+  height: 55px;
+  margin: 0.5em auto;
+  text-indent: -99999px;
+  width: 91px;
 }
-header h1 span {
-  font-size: 1.5em;
-  z-index: 100;
-  text-shadow: 0 0.08em 0 #666;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-header h1 span,
-header h1 span:after {
-  font-weight: 900;
-  color: #f5f5f5;
-  white-space: nowrap;
-  display: inline-block;
-  position: relative;
-  letter-spacing: 0.1em;
-  padding: 0.2em 0 0.25em 0;
-}
-header h1 span:after {
-  content: attr(data-shadow-text);
-  color: rgba(255,255,255,0.25);
-  text-shadow: none;
-  position: absolute;
-  left: 0;
-  top: 0.165em;
-  z-index: -1;
-  -webkit-mask-image: url("http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png");
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-header p.byline {
+header #byline {
   color: #707070;
   font-family: Arvo;
   margin: 0;
 }
-header p.byline a {
+header #byline a {
   color: rgba(255,255,255,0.5);
   text-decoration: none;
 }
-header p.byline a:hover {
-  color: #efedce;
+header #byline a:hover {
+  color: #fff;
+}
+header #hire {
+  background: #333;
+  border: 1px solid #fff;
+  color: #fff;
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.5em;
+  text-decoration: none;
+  text-shadow: none;
+}
+header #hire:hover {
+  background: #fff;
+  border: 1px solid #333;
+  color: #333;
 }
 #container {
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 0 3em;
 }
 #contact ul li {
   font-weight: 700;
@@ -241,7 +222,7 @@ header p.byline a:hover {
   text-decoration: none;
 }
 #contact ul li a:hover {
-  color: #00a6cd;
+  color: #666;
   text-shadow: #fff -1px -1px 0;
 }
 #content {
@@ -261,8 +242,8 @@ header p.byline a:hover {
 #content h3 {
   background: rgba(0,0,0,0.2);
   clear: both;
+  font-family: "Noto Sans";
   font-size: 180%;
-  font-weight: 700;
   padding: 0.5em;
 }
 #content h4 {
@@ -278,9 +259,6 @@ footer {
   clear: both;
   font-size: 80%;
   margin: auto;
-  opacity: 0.5;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  filter: alpha(opacity=50);
   padding-top: 5em;
   text-align: center;
 }
@@ -344,17 +322,15 @@ footer {
 }
 /* =tumblr */
 #tumblr ul.posts {
-  margin-bottom: 3em;
-  text-align: center;
+  text-align: left;
 }
 #tumblr ul.posts li {
   border-bottom: 1px solid rgba(0,0,0,0.05);
-  padding: 40px 0;
-  margin: 0;
-}
-#tumblr ul.posts li.quote {
   font-size: 125%;
-  line-height: 170%;
+  line-height: 160%;
+  padding: 2em 1em;
+  margin: auto;
+  max-width: 45em;
 }
 #tumblr ul.posts li.quote .source a:first-child {
   display: block;
@@ -365,12 +341,12 @@ footer {
   padding: 0;
 }
 #tumblr ul.posts li.quote .source a:first-child:hover {
-  background: #00a6cd;
+  background: #333;
   color: #fff;
   text-decoration: none;
 }
 #tumblr ul.posts li.quote .source a:first-child:hover:after {
-  content: " →";
+  content: " »";
 }
 #tumblr ul.posts li:first-child {
   padding-top: 0;
@@ -380,27 +356,43 @@ footer {
 }
 #tumblr ul.posts li img {
   background-color: #fff;
-  max-width: 70%;
+  display: block;
+  margin: auto;
+  max-width: 98%;
+  max-height: 30em;
   padding: 15px;
+  text-align: center;
 }
-/* =pageWork =work */
-#pageWork #content {
-  text-align: left;
+/* =portfolio */
+#portfolio a h4 {
+  color: #666;
 }
-#pageWork .heart {
+#portfolio a:hover h4 {
+  color: #333;
+}
+#portfolio h3,
+#portfolio h4,
+#portfolio h5 {
+  font-family: "Raleway";
+  font-weight: 900;
+}
+#portfolio .heart {
   color: #f00;
 }
-#pageWork #products li.one-half p {
+#portfolio #products li.one-half p {
   margin-right: 2em;
 }
-#pageWork iframe {
+#portfolio iframe {
   background-color: #fff;
   max-width: 70%;
   padding: 15px;
 }
 /* =pagePiece */
-#pagePiece #content {
-  text-align: left;
+#pagePiece h3,
+#pagePiece h4,
+#pagePiece h5 {
+  font-family: "Raleway";
+  font-weight: 900;
 }
 #pagePiece h4 {
   padding-top: 2em;
@@ -476,7 +468,7 @@ footer {
   max-width: 300px;
 }
 a .thumb:hover {
-  background-color: #00bfeb;
+  background-color: #333;
 }
 /* =Boxer =Modal */
 #boxer .boxer-close {
@@ -487,11 +479,13 @@ a .thumb:hover {
   body {
     font-size: 200%;
   }
-  header {
-    padding: 1em;
+  header #logo a {
+    background: transparent url("/img/logo@2x.png");
+    height: 109px;
+    width: 181px;
   }
   #container {
-    padding: 0 2em;
+    padding: 0 1em;
   }
   .one-half,
   .one-third,
