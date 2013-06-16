@@ -1,7 +1,8 @@
 @import 'nib'
-@import url('http://fonts.googleapis.com/css?family=Raleway:600,900')
 @import url('http://fonts.googleapis.com/css?family=Arvo')
+@import url('http://fonts.googleapis.com/css?family=GFS+Didot')
 @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic')
+@import url('http://fonts.googleapis.com/css?family=Raleway:600,900')
 
 global-reset()
 
@@ -60,13 +61,12 @@ body
 	color lighten(colorHeader, 50%)
 	font-family fontBody
 	line-height 170%
-	min-width 600px
 header
 	background transparent url('/img/headerBg.png') bottom repeat-x
 	border-top .25em solid lighten(colorHeader, 15%)
 	margin-bottom 3em
-	padding .5em 100px
-	padding-bottom 2em
+	padding .5em
+	padding-bottom 0
 	text-align center
 	text-shadow 0px -1px 0px darken(colorHeader, 30%)
 	transition height animationSpeed linear
@@ -75,6 +75,10 @@ header
 		font: 600 1.5em/1 'Raleway', sans-serif
 		letter-spacing: .5em
 		margin 0
+		img
+			height 48px
+			width 82px
+			margin .5em 0
 		span
 			font-size: 1.5em
 			z-index: 100
@@ -100,7 +104,7 @@ header
 			z-index: -1;
 			-webkit-mask-image: url(http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png)
 			transition all animationSpeed ease-out
-	p.byline
+	#byline
 		color lighten(colorHeader,30%)
 		font-family Arvo
 		margin 0
@@ -108,10 +112,22 @@ header
 			color rgba(255,255,255,.5)
 			text-decoration none
 			&:hover
-				color colorLinkHover
+				color #fff
+	#hire
+		background #333
+		border 1px solid #fff
+		color #fff
+		display inline-block
+		margin-top 1em
+		padding .5em
+		text-decoration none
+		text-shadow none
+		&:hover
+			background #fff
+			border 1px solid #333
+			color #333
 #container
-	padding-left 100px
-	padding-right 100px
+	padding 0 3em
 #contact
 	ul
 		li
@@ -207,15 +223,15 @@ footer
 /* =tumblr */
 #tumblr
 	ul.posts
-		margin-bottom 3em
-		text-align center
+		text-align left
 		li
 			border-bottom 1px solid rgba(0,0,0,.05)
-			padding 40px 0
-			margin 0
+			font-size 125%
+			line-height 160%
+			padding 2em 1em
+			margin auto
+			max-width 45em
 			&.quote
-				font-size: 125%
-				line-height 170%
 				.source
 					a:first-child
 						display block
@@ -227,14 +243,20 @@ footer
 							background colorLinkHover
 							color #fff
 							text-decoration none
+							&:after
+								content " »"
 			&:first-child
 				padding-top 0
 			p:last-child 
 				margin-bottom 0
 			img
 				background-color #fff
-				max-width (100% - 30px)
+				display block
+				margin auto
+				max-width (100% - 2em)
+				max-height 30em
 				padding 15px
+				text-align center
 
 /* =portfolio */
 #portfolio
@@ -322,8 +344,6 @@ footer
 @media all and (max-device-width: 751px)
 	body
 		font-size 200%
-	header
-		padding 1em
 	#container
 		padding 0 2em
 	.one-half,

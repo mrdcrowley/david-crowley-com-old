@@ -1,6 +1,7 @@
-@import url("http://fonts.googleapis.com/css?family=Raleway:600,900");
 @import url("http://fonts.googleapis.com/css?family=Arvo");
+@import url("http://fonts.googleapis.com/css?family=GFS+Didot");
 @import url("http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic");
+@import url("http://fonts.googleapis.com/css?family=Raleway:600,900");
 html,
 body,
 div,
@@ -165,14 +166,13 @@ body {
   color: #999;
   font-family: Arvo, Georgia, sans-serif;
   line-height: 170%;
-  min-width: 600px;
 }
 header {
   background: transparent url("/img/headerBg.png") bottom repeat-x;
   border-top: 0.25em solid #525252;
   margin-bottom: 3em;
-  padding: 0.5em 100px;
-  padding-bottom: 2em;
+  padding: 0.5em;
+  padding-bottom: 0;
   text-align: center;
   text-shadow: 0px -1px 0px #242424;
   -webkit-transition: height 0.2s linear;
@@ -186,6 +186,11 @@ header h1 {
   font: 600 1.5em/1 'Raleway', sans-serif;
   letter-spacing: 0.5em;
   margin: 0;
+}
+header h1 img {
+  height: 48px;
+  width: 82px;
+  margin: 0.5em 0;
 }
 header h1 span {
   font-size: 1.5em;
@@ -221,21 +226,35 @@ header h1 span:after {
   -ms-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-header p.byline {
+header #byline {
   color: #707070;
   font-family: Arvo;
   margin: 0;
 }
-header p.byline a {
+header #byline a {
   color: rgba(255,255,255,0.5);
   text-decoration: none;
 }
-header p.byline a:hover {
-  color: #00a6cd;
+header #byline a:hover {
+  color: #fff;
+}
+header #hire {
+  background: #333;
+  border: 1px solid #fff;
+  color: #fff;
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.5em;
+  text-decoration: none;
+  text-shadow: none;
+}
+header #hire:hover {
+  background: #fff;
+  border: 1px solid #333;
+  color: #333;
 }
 #container {
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 0 3em;
 }
 #contact ul li {
   font-weight: 700;
@@ -348,17 +367,15 @@ footer {
 }
 /* =tumblr */
 #tumblr ul.posts {
-  margin-bottom: 3em;
-  text-align: center;
+  text-align: left;
 }
 #tumblr ul.posts li {
   border-bottom: 1px solid rgba(0,0,0,0.05);
-  padding: 40px 0;
-  margin: 0;
-}
-#tumblr ul.posts li.quote {
   font-size: 125%;
-  line-height: 170%;
+  line-height: 160%;
+  padding: 2em 1em;
+  margin: auto;
+  max-width: 45em;
 }
 #tumblr ul.posts li.quote .source a:first-child {
   display: block;
@@ -373,6 +390,9 @@ footer {
   color: #fff;
   text-decoration: none;
 }
+#tumblr ul.posts li.quote .source a:first-child:hover:after {
+  content: " »";
+}
 #tumblr ul.posts li:first-child {
   padding-top: 0;
 }
@@ -381,8 +401,12 @@ footer {
 }
 #tumblr ul.posts li img {
   background-color: #fff;
-  max-width: 70%;
+  display: block;
+  margin: auto;
+  max-width: 98%;
+  max-height: 30em;
   padding: 15px;
+  text-align: center;
 }
 /* =portfolio */
 #portfolio #content {
@@ -487,9 +511,6 @@ a .thumb:hover {
 @media all and (max-device-width: 751px) {
   body {
     font-size: 200%;
-  }
-  header {
-    padding: 1em;
   }
   #container {
     padding: 0 2em;

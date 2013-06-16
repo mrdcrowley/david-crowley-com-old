@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	// lazy loading for images
-	$("img.thumb, ul.posts li img").lazyload({
+	$("img.thumb").lazyload({
 		effect : "fadeIn"
 	});
 
@@ -24,4 +24,6 @@ $(document).ready(function() {
 		lang:               'en',
 		maptype:            'watercolor'
 	});
+
 });
+
