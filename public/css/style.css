@@ -1,7 +1,7 @@
 @import url("http://fonts.googleapis.com/css?family=Arvo");
 @import url("http://fonts.googleapis.com/css?family=GFS+Didot");
-@import url("http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic");
 @import url("http://fonts.googleapis.com/css?family=Raleway:600,900");
+@import url("http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic");
 html,
 body,
 div,
@@ -109,7 +109,7 @@ a {
   transition: background-color 0.2s ease-out;
 }
 a:hover {
-  color: #00a6cd;
+  color: #444;
 }
 p,
 h1,
@@ -175,56 +175,14 @@ header {
   padding-bottom: 0;
   text-align: center;
   text-shadow: 0px -1px 0px #242424;
-  -webkit-transition: height 0.2s linear;
-  -moz-transition: height 0.2s linear;
-  -o-transition: height 0.2s linear;
-  -ms-transition: height 0.2s linear;
-  transition: height 0.2s linear;
 }
-header h1 {
-  color: rgba(0,0,0,0.5);
-  font: 600 1.5em/1 'Raleway', sans-serif;
-  letter-spacing: 0.5em;
-  margin: 0;
-}
-header h1 img {
-  height: 48px;
-  width: 82px;
-  margin: 0.5em 0;
-}
-header h1 span {
-  font-size: 1.5em;
-  z-index: 100;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-header h1 span,
-header h1 span:after {
-  font-weight: 900;
-  color: #f5f5f5;
-  white-space: nowrap;
-  display: inline-block;
-  position: relative;
-  letter-spacing: 0.1em;
-  padding: 0.2em 0 0.25em 0;
-}
-header h1 span:after {
-  content: attr(data-shadow-text);
-  color: rgba(255,255,255,0.25);
-  text-shadow: none;
-  position: absolute;
-  left: 0;
-  top: 3px;
-  z-index: -1;
-  -webkit-mask-image: url("http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png");
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+header #logo a {
+  background: transparent url("/img/logo.png");
+  display: block;
+  height: 55px;
+  margin: 0.5em auto;
+  text-indent: -99999px;
+  width: 91px;
 }
 header #byline {
   color: #707070;
@@ -284,8 +242,8 @@ header #hire:hover {
 #content h3 {
   background: rgba(0,0,0,0.2);
   clear: both;
+  font-family: "Noto Sans";
   font-size: 180%;
-  font-weight: 700;
   padding: 0.5em;
 }
 #content h4 {
@@ -301,9 +259,6 @@ footer {
   clear: both;
   font-size: 80%;
   margin: auto;
-  opacity: 0.5;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  filter: alpha(opacity=50);
   padding-top: 5em;
   text-align: center;
 }
@@ -386,7 +341,7 @@ footer {
   padding: 0;
 }
 #tumblr ul.posts li.quote .source a:first-child:hover {
-  background: #00a6cd;
+  background: #444;
   color: #fff;
   text-decoration: none;
 }
@@ -409,8 +364,17 @@ footer {
   text-align: center;
 }
 /* =portfolio */
-#portfolio #content {
-  text-align: left;
+#portfolio a h4 {
+  color: #666;
+}
+#portfolio a:hover h4 {
+  color: #444;
+}
+#portfolio h3,
+#portfolio h4,
+#portfolio h5 {
+  font-family: "Raleway";
+  font-weight: 900;
 }
 #portfolio .heart {
   color: #f00;
@@ -424,8 +388,11 @@ footer {
   padding: 15px;
 }
 /* =pagePiece */
-#pagePiece #content {
-  text-align: left;
+#pagePiece h3,
+#pagePiece h4,
+#pagePiece h5 {
+  font-family: "Raleway";
+  font-weight: 900;
 }
 #pagePiece h4 {
   padding-top: 2em;
@@ -501,7 +468,7 @@ footer {
   max-width: 300px;
 }
 a .thumb:hover {
-  background-color: #00a6cd;
+  background-color: #444;
 }
 /* =Boxer =Modal */
 #boxer .boxer-close {
@@ -512,8 +479,13 @@ a .thumb:hover {
   body {
     font-size: 200%;
   }
+  header #logo a {
+    background: transparent url("/img/logo@2x.png");
+    height: 109px;
+    width: 181px;
+  }
   #container {
-    padding: 0 2em;
+    padding: 0 1em;
   }
   .one-half,
   .one-third,
