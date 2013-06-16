@@ -109,7 +109,7 @@ a {
   transition: background-color 0.2s ease-out;
 }
 a:hover {
-  color: #444;
+  color: #333;
 }
 p,
 h1,
@@ -341,7 +341,7 @@ footer {
   padding: 0;
 }
 #tumblr ul.posts li.quote .source a:first-child:hover {
-  background: #444;
+  background: #333;
   color: #fff;
   text-decoration: none;
 }
@@ -368,7 +368,7 @@ footer {
   color: #666;
 }
 #portfolio a:hover h4 {
-  color: #444;
+  color: #333;
 }
 #portfolio h3,
 #portfolio h4,
@@ -468,7 +468,7 @@ footer {
   max-width: 300px;
 }
 a .thumb:hover {
-  background-color: #444;
+  background-color: #333;
 }
 /* =Boxer =Modal */
 #boxer .boxer-close {
