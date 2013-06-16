@@ -12,7 +12,7 @@ div#tumblr
 				- if ( post.type == 'photo' )
 					each photo in post.photos
 						a(href='#{photo.alt_sizes[0].url}')
-							img.thumb(data-original="#{photo.alt_sizes[0].url}", height="auto", width="auto", src="/img/placeholder.gif")
+							img.thumb(src="#{photo.alt_sizes[0].url}", alt="")
 						p
 							!{post.caption}
 					#{post.title}

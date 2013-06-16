@@ -7,10 +7,9 @@ html
 
 	body(id='#{cssID}')
 		header
-			a(href='/')
-				h1
-					span(data-shadow-text="David Crowley") David Crowley
-			p.byline
+			h1#logo
+				a(href='/') David Crowley
+			p#byline
 				| Interaction designer, front-end developer and general enthusiast.<br/>
 				a(href="http://twitter.com/mrdcrowley") @mrdcrowley
 				| , 
@@ -22,6 +21,8 @@ html
 				|  and 
 				a(href="http://www.youtube.com/user/slantback/videos") YouTube
 				| .
+			a#hire(href="/portfolio")
+				| Available for hire
 		#container
 			#content
 				block content

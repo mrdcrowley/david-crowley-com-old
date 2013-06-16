@@ -1,6 +1,7 @@
 @import 'nib'
-@import url('http://fonts.googleapis.com/css?family=Raleway:600,900')
 @import url('http://fonts.googleapis.com/css?family=Arvo')
+@import url('http://fonts.googleapis.com/css?family=GFS+Didot')
+@import url('http://fonts.googleapis.com/css?family=Raleway:600,900')
 @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic')
 
 global-reset()
@@ -9,8 +10,8 @@ global-reset()
 /* =Variables */
 colorBackground = rgba(245,245,245,1)
 colorBody = #444
-colorLink = #00a6cd
-colorLinkHover = lighten(colorLink, 10%)
+colorLink = #666
+colorLinkHover = #333
 colorHeader = #333
 colorMain = #333
 fontBody = Arvo, Georgia, sans-serif
@@ -22,6 +23,7 @@ animationSpeed = .2s
 a
 	color colorLink
 	transition color animationSpeed ease-out
+	transition background-color animationSpeed ease-out
 	&:hover
 		color colorLinkHover
 p, h1, h2, h3, h4, h5, h6
@@ -59,51 +61,22 @@ body
 	color lighten(colorHeader, 50%)
 	font-family fontBody
 	line-height 170%
-	min-width 600px
 header
 	background transparent url('/img/headerBg.png') bottom repeat-x
-	border-top .25em solid darken(colorLink, 45%)
+	border-top .25em solid lighten(colorHeader, 15%)
 	margin-bottom 3em
-	padding .5em 100px
-	padding-bottom 2em
+	padding .5em
+	padding-bottom 0
 	text-align center
 	text-shadow 0px -1px 0px darken(colorHeader, 30%)
-	transition height animationSpeed linear
-	h1
-		color: rgba(0,0,0,.5)
-		font: 600 1.5em/1 'Raleway', sans-serif
-		letter-spacing: .5em
-		margin 0
-		span
-			font-size: 1.5em
-			z-index: 100
-			text-shadow 0 .08em 0 #666
-			transition all animationSpeed ease-out
-			&:hover
-				// text-shadow 0 .04em 0 #9cb8b3
-		span,
-		span:after
-			font-weight: 900
-			color: colorBackground
-			white-space: nowrap
-			display: inline-block
-			position: relative
-			letter-spacing: .1em
-			padding: .2em 0 .25em 0
-		span:after
-			content: attr(data-shadow-text)
-			color rgba(255,255,255,.25)
-			text-shadow: none
-			position: absolute
-			left 0
-			top .1650em
-			z-index: -1;
-			-webkit-mask-image: url(http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png)
-			transition all animationSpeed ease-out
-		span:hover:after
-			// left 0
-			// top: .0875em
-	p.byline
+	#logo a
+		background transparent url("/img/logo.png")
+		display block
+		height 55px
+		margin .5em auto
+		text-indent -99999px
+		width 91px
+	#byline
 		color lighten(colorHeader,30%)
 		font-family Arvo
 		margin 0
@@ -111,10 +84,22 @@ header
 			color rgba(255,255,255,.5)
 			text-decoration none
 			&:hover
-				color #efedce
+				color #fff
+	#hire
+		background #333
+		border 1px solid #fff
+		color #fff
+		display inline-block
+		margin-top 1em
+		padding .5em
+		text-decoration none
+		text-shadow none
+		&:hover
+			background #fff
+			border 1px solid #333
+			color #333
 #container
-	padding-left 100px
-	padding-right 100px
+	padding 0 3em
 #contact
 	ul
 		li
@@ -140,12 +125,12 @@ header
 	h3
 		background rgba(0,0,0,.2)
 		clear both
+		font-family "Noto Sans"
 		font-size 180%
-		font-weight 700
 		padding .5em
 	h4
 		clear both
-		font-size: 140%
+		font-size 140%
 		font-weight 700
 	h5
 		font-weight bold
@@ -155,7 +140,6 @@ footer
 	clear both
 	font-size 80%
 	margin auto
-	opacity .5
 	padding-top 5em
 	text-align center
 
@@ -210,15 +194,15 @@ footer
 /* =tumblr */
 #tumblr
 	ul.posts
-		margin-bottom 3em
-		text-align center
+		text-align left
 		li
 			border-bottom 1px solid rgba(0,0,0,.05)
-			padding 40px 0
-			margin 0
+			font-size 125%
+			line-height 160%
+			padding 2em 1em
+			margin auto
+			max-width 45em
 			&.quote
-				font-size: 125%
-				line-height 170%
 				.source
 					a:first-child
 						display block
@@ -227,24 +211,36 @@ footer
 							display inline
 							padding 0
 						&:hover
-							background colorLink
+							background colorLinkHover
 							color #fff
 							text-decoration none
 							&:after
-								content " →"
+								content " »"
 			&:first-child
 				padding-top 0
 			p:last-child 
 				margin-bottom 0
 			img
 				background-color #fff
-				max-width (100% - 30px)
+				display block
+				margin auto
+				max-width (100% - 2em)
+				max-height 30em
 				padding 15px
+				text-align center
 
-/* =pageWork =work */
-#pageWork
-	#content
-		text-align left
+/* =portfolio */
+#portfolio
+	a
+		h4
+			color colorLink
+		&:hover h4
+			color colorLinkHover
+	h3
+	h4
+	h5
+		font-family "Raleway"
+		font-weight 900
 	.heart
 		color red
 	#products
@@ -258,8 +254,11 @@ footer
 
 /* =pagePiece */
 #pagePiece
-	#content
-		text-align left
+	h3
+	h4
+	h5
+		font-family "Raleway"
+		font-weight 900
 	h4
 		padding-top 2em
 	.list
@@ -328,9 +327,12 @@ footer
 	body
 		font-size 200%
 	header
-		padding 1em
+		#logo a
+			background transparent url("/img/logo@2x.png")
+			height 109px
+			width 181px
 	#container
-		padding 0 2em
+		padding 0 1em
 	.one-half,
 	.one-third,
 	.two-thirds
