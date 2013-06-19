@@ -8,7 +8,7 @@ global-reset()
 
 
 /* =Variables */
-colorBackground = rgba(245,245,245,1)
+colorBackground = #fff
 colorBody = #444
 colorLink = #666
 colorLinkHover = #333
@@ -57,7 +57,7 @@ ul
 
 /* =Structure */
 body
-	background colorBackground url('/img/bg.png')
+	background colorBackground
 	color lighten(colorHeader, 50%)
 	font-family fontBody
 	line-height 170%
@@ -98,7 +98,7 @@ header
 			background #fff
 			color #333
 #container
-	padding 0 3em
+	padding 0 1.5em
 #contact
 	ul
 		li
@@ -111,8 +111,8 @@ header
 				text-shadow #fff -1px -1px 0;
 #content
 	clear both
-	float left
-	width 100%
+	margin auto
+	max-width 45em
 	h2
 		background rgba(0,0,0,.1)
 		display inline-block
@@ -200,7 +200,6 @@ footer
 			line-height 160%
 			padding 2em 1em
 			margin auto
-			max-width 45em
 			&.quote
 				.source
 					a:first-child

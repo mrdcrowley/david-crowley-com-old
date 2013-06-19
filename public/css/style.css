@@ -162,7 +162,7 @@ ul li {
 }
 /* =Structure */
 body {
-  background: #f5f5f5 url("/img/bg.png");
+  background: #fff;
   color: #999;
   font-family: Arvo, Georgia, sans-serif;
   line-height: 170%;
@@ -211,7 +211,7 @@ header #hire:hover {
   color: #333;
 }
 #container {
-  padding: 0 3em;
+  padding: 0 1.5em;
 }
 #contact ul li {
   font-weight: 700;
@@ -226,8 +226,8 @@ header #hire:hover {
 }
 #content {
   clear: both;
-  float: left;
-  width: 100%;
+  margin: auto;
+  max-width: 45em;
 }
 #content h2 {
   background: rgba(0,0,0,0.1);
@@ -329,7 +329,6 @@ footer {
   line-height: 160%;
   padding: 2em 1em;
   margin: auto;
-  max-width: 45em;
 }
 #tumblr ul.posts li.quote .source a:first-child {
   display: block;
