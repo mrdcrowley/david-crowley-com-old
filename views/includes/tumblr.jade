@@ -3,30 +3,33 @@ div#tumblr
 	ul.posts
 		- each post in postsTumblr
 			li(class='#{post.type}')
+
 				//- LINKS
 				- if ( post.type == 'link' )
 					p
 						a(href='#{post.url}') !{post.title}
 					p
 						!{post.description}
+
 				//- PHOTOS
 				- if ( post.type == 'photo' )
 					each photo in post.photos
 						a(href='#{photo.alt_sizes[0].url}')
 							img.thumb(src="#{photo.alt_sizes[0].url}", alt="")
-						p
-							!{post.caption}
+						!{post.caption}
 					#{post.title}
 					!{post.text}
+
 				//- QUOTES
 				- if ( post.type == 'quote' )
 					p
 						!{post.text}
 					p.source
 						!{post.source}
+
 				//- VIDEOS
 				- if ( post.type == 'video' )
-					!{post.player[2].embed_code}
+					div.center !{post.player[2].embed_code}
 					p
 						!{post.caption}
 	p.subtle

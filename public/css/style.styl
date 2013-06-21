@@ -193,13 +193,22 @@ footer
 /* =tumblr */
 #tumblr
 	ul.posts
-		text-align left
 		li
-			border-bottom 1px solid rgba(0,0,0,.05)
+			border-bottom 1px solid rgba(0,0,0,.25)
+			clear left
 			font-size 125%
 			line-height 160%
+			overflow hidden
 			padding 2em 1em
 			margin auto
+			img.thumb
+				border 1px solid rgba(0,0,0,.25)
+				background-color #fff
+				display block
+				float right
+				max-width (33% - 2em)
+				margin-bottom .5em
+				margin-left 1em
 			&.quote
 				.source
 					a:first-child
@@ -218,14 +227,6 @@ footer
 				padding-top 0
 			p:last-child 
 				margin-bottom 0
-			img
-				background-color #fff
-				display block
-				margin auto
-				max-width (100% - 2em)
-				max-height 30em
-				padding 15px
-				text-align center
 
 /* =portfolio */
 #portfolio

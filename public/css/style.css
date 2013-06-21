@@ -320,15 +320,23 @@ footer {
   float: right;
 }
 /* =tumblr */
-#tumblr ul.posts {
-  text-align: left;
-}
 #tumblr ul.posts li {
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  clear: left;
   font-size: 125%;
   line-height: 160%;
+  overflow: hidden;
   padding: 2em 1em;
   margin: auto;
+}
+#tumblr ul.posts li img.thumb {
+  border: 1px solid rgba(0,0,0,0.25);
+  background-color: #fff;
+  display: block;
+  float: right;
+  max-width: 31%;
+  margin-bottom: 0.5em;
+  margin-left: 1em;
 }
 #tumblr ul.posts li.quote .source a:first-child {
   display: block;
@@ -351,15 +359,6 @@ footer {
 }
 #tumblr ul.posts li p:last-child {
   margin-bottom: 0;
-}
-#tumblr ul.posts li img {
-  background-color: #fff;
-  display: block;
-  margin: auto;
-  max-width: 98%;
-  max-height: 30em;
-  padding: 15px;
-  text-align: center;
 }
 /* =portfolio */
 #portfolio a h4 {
