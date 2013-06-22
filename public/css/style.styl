@@ -14,6 +14,7 @@ colorLink = #666
 colorLinkHover = #333
 colorHeader = #333
 colorMain = #333
+colorText = #999
 fontBody = Arvo, Georgia, sans-serif
 fontAlt = 'Noto Sans', Georgia, sans-serif
 animationSpeed = .2s
@@ -57,18 +58,17 @@ ul
 
 /* =Structure */
 body
-	background colorBackground
-	color lighten(colorHeader, 50%)
+	background #fff
+	color colorText
 	font-family fontBody
 	line-height 170%
 header
-	background transparent url('/img/headerBg.png') bottom repeat-x
+	background #333 url('/img/slantedDark.png') center bottom repeat-x
 	border-top .25em solid lighten(colorHeader, 15%)
 	margin-bottom 3em
 	padding .5em
 	padding-bottom 0
 	text-align center
-	text-shadow 0px -1px 0px darken(colorHeader, 30%)
 	#logo a
 		background transparent url("/img/logo.png")
 		display block
@@ -92,13 +92,12 @@ header
 		display inline-block
 		margin-top 1em
 		padding .5em
+		padding-bottom .75em
 		text-decoration none
-		text-shadow none
 		&:hover
 			background #fff
 			color #333
-#container
-	padding 0 1.5em
+
 #contact
 	ul
 		li
@@ -108,11 +107,9 @@ header
 				text-decoration none
 			a:hover
 				color colorLink
-				text-shadow #fff -1px -1px 0;
 #content
 	clear both
 	margin auto
-	max-width 45em
 	h2
 		background rgba(0,0,0,.1)
 		display inline-block
@@ -193,36 +190,55 @@ footer
 /* =tumblr */
 #tumblr
 	ul.posts
+		margin-bottom 2em
 		li
-			border-bottom 1px solid rgba(0,0,0,.25)
-			clear left
+			background #fff url('/img/slantedLight.png') center bottom repeat-x
+			border 0
+			clear both
+			display block
 			font-size 125%
 			line-height 160%
-			overflow hidden
 			padding 2em 1em
-			margin auto
+			padding-bottom 4em
+			padding-top 1em
+			margin 0 auto
+			p
+				margin auto
+				max-width 35em
+			a
+				color colorText
+				&:hover
+					color #00a6cd
 			img.thumb
-				border 1px solid rgba(0,0,0,.25)
-				background-color #fff
 				display block
-				float right
-				max-width (33% - 2em)
+				margin auto
 				margin-bottom .5em
-				margin-left 1em
+				max-width (66% - 2em)
 			&.quote
 				.source
 					a:first-child
+						background rgba(0,0,0,.05)
+						color colorText
 						display block
+						margin 1em -.5em 0 -.5em
 						padding .5em
+						text-decoration none
 						&.tumblr_blog
 							display inline
 							padding 0
 						&:hover
-							background colorLinkHover
+							background #00a6cd
 							color #fff
 							text-decoration none
 							&:after
 								content " »"
+			&:nth-child(even)
+				background #333 url('/img/slantedDark.png') center bottom repeat-x
+				color #999
+				.source
+					a:first-child
+						background rgba(255,255,255,.05)
+						color #999
 			&:first-child
 				padding-top 0
 			p:last-child 
@@ -230,6 +246,10 @@ footer
 
 /* =portfolio */
 #portfolio
+	#container
+		margin auto
+		max-width 45em
+		padding 1em 2em
 	a
 		h4
 			color colorLink
@@ -253,6 +273,10 @@ footer
 
 /* =pagePiece */
 #pagePiece
+	#container
+		margin auto
+		max-width 45em
+		padding 1em 2em
 	h3
 	h4
 	h5
@@ -330,8 +354,6 @@ footer
 			background transparent url("/img/logo@2x.png")
 			height 109px
 			width 181px
-	#container
-		padding 0 1em
 	.one-half,
 	.one-third,
 	.two-thirds

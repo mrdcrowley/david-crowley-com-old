@@ -168,13 +168,12 @@ body {
   line-height: 170%;
 }
 header {
-  background: transparent url("/img/headerBg.png") bottom repeat-x;
+  background: #333 url("/img/slantedDark.png") center bottom repeat-x;
   border-top: 0.25em solid #525252;
   margin-bottom: 3em;
   padding: 0.5em;
   padding-bottom: 0;
   text-align: center;
-  text-shadow: 0px -1px 0px #242424;
 }
 header #logo a {
   background: transparent url("/img/logo.png");
@@ -203,15 +202,12 @@ header #hire {
   display: inline-block;
   margin-top: 1em;
   padding: 0.5em;
+  padding-bottom: 0.75em;
   text-decoration: none;
-  text-shadow: none;
 }
 header #hire:hover {
   background: #fff;
   color: #333;
-}
-#container {
-  padding: 0 1.5em;
 }
 #contact ul li {
   font-weight: 700;
@@ -222,12 +218,10 @@ header #hire:hover {
 }
 #contact ul li a:hover {
   color: #666;
-  text-shadow: #fff -1px -1px 0;
 }
 #content {
   clear: both;
   margin: auto;
-  max-width: 45em;
 }
 #content h2 {
   background: rgba(0,0,0,0.1);
@@ -320,39 +314,64 @@ footer {
   float: right;
 }
 /* =tumblr */
+#tumblr ul.posts {
+  margin-bottom: 2em;
+}
 #tumblr ul.posts li {
-  border-bottom: 1px solid rgba(0,0,0,0.25);
-  clear: left;
+  background: #fff url("/img/slantedLight.png") center bottom repeat-x;
+  border: 0;
+  clear: both;
+  display: block;
   font-size: 125%;
   line-height: 160%;
-  overflow: hidden;
   padding: 2em 1em;
+  padding-bottom: 4em;
+  padding-top: 1em;
+  margin: 0 auto;
+}
+#tumblr ul.posts li p {
   margin: auto;
+  max-width: 35em;
+}
+#tumblr ul.posts li a {
+  color: #999;
+}
+#tumblr ul.posts li a:hover {
+  color: #00a6cd;
 }
 #tumblr ul.posts li img.thumb {
-  border: 1px solid rgba(0,0,0,0.25);
-  background-color: #fff;
   display: block;
-  float: right;
-  max-width: 31%;
+  margin: auto;
   margin-bottom: 0.5em;
-  margin-left: 1em;
+  max-width: 64%;
 }
 #tumblr ul.posts li.quote .source a:first-child {
+  background: rgba(0,0,0,0.05);
+  color: #999;
   display: block;
+  margin: 1em -0.5em 0 -0.5em;
   padding: 0.5em;
+  text-decoration: none;
 }
 #tumblr ul.posts li.quote .source a:first-child.tumblr_blog {
   display: inline;
   padding: 0;
 }
 #tumblr ul.posts li.quote .source a:first-child:hover {
-  background: #333;
+  background: #00a6cd;
   color: #fff;
   text-decoration: none;
 }
 #tumblr ul.posts li.quote .source a:first-child:hover:after {
   content: " »";
+}
+#tumblr ul.posts li:nth-child(even) {
+  background: #333 url("/img/slantedDark.png") center bottom repeat-x;
+  color: #999;
+}
+#tumblr ul.posts li:nth-child(even) .source a:first-child {
+  background: rgba(255,255,255,0.05);
+  color: #999;
 }
 #tumblr ul.posts li:first-child {
   padding-top: 0;
@@ -361,6 +380,11 @@ footer {
   margin-bottom: 0;
 }
 /* =portfolio */
+#portfolio #container {
+  margin: auto;
+  max-width: 45em;
+  padding: 1em 2em;
+}
 #portfolio a h4 {
   color: #666;
 }
@@ -385,6 +409,11 @@ footer {
   padding: 15px;
 }
 /* =pagePiece */
+#pagePiece #container {
+  margin: auto;
+  max-width: 45em;
+  padding: 1em 2em;
+}
 #pagePiece h3,
 #pagePiece h4,
 #pagePiece h5 {
@@ -480,9 +509,6 @@ a .thumb:hover {
     background: transparent url("/img/logo@2x.png");
     height: 109px;
     width: 181px;
-  }
-  #container {
-    padding: 0 1em;
   }
   .one-half,
   .one-third,
