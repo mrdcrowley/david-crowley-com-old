@@ -1,8 +1,6 @@
 @import 'nib'
 @import url('http://fonts.googleapis.com/css?family=Arvo')
-@import url('http://fonts.googleapis.com/css?family=GFS+Didot')
-@import url('http://fonts.googleapis.com/css?family=Raleway:600,900')
-@import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic')
+@import url('http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic')
 
 global-reset()
 
@@ -16,7 +14,7 @@ colorHeader = #333
 colorMain = #333
 colorText = #999
 fontBody = Arvo, Georgia, sans-serif
-fontAlt = 'Noto Sans', Georgia, sans-serif
+fontAlt = 'PlayFair Display', Georgia, sans-serif
 animationSpeed = .2s
 
 
@@ -65,6 +63,9 @@ body
 header
 	background #333 url('/img/slantedDark.png') center bottom repeat-x
 	border-top .25em solid lighten(colorHeader, 15%)
+	font-family fontAlt
+	font-size 125%
+	font-style italic
 	margin-bottom 3em
 	padding .5em
 	padding-bottom 0
@@ -78,7 +79,6 @@ header
 		width 91px
 	#byline
 		color lighten(colorHeader,30%)
-		font-family Arvo
 		margin 0
 		a
 			color rgba(255,255,255,.5)
@@ -110,26 +110,31 @@ header
 #content
 	clear both
 	margin auto
+	h2, h3, h3 h4, h5, h6
+		font-family fontAlt
+		font-weight 400
 	h2
 		background rgba(0,0,0,.1)
 		display inline-block
 		font-size 125%
-		font-style normal
+		font-style italic
 		font-weight 700
 		margin-bottom 3em
 		padding 1em
 	h3
 		background rgba(0,0,0,.2)
 		clear both
-		font-family "Noto Sans"
 		font-size 180%
+		font-style italic
+		font-weight 900
 		padding .5em
 	h4
 		clear both
 		font-size 140%
+		font-style italic
 		font-weight 700
 	h5
-		font-weight bold
+		font-style italic
 		margin 0
 
 footer
@@ -139,56 +144,11 @@ footer
 	padding-top 5em
 	text-align center
 
-/* =Blog */
-.blog
-	color lighten(colorHeader, 50%)
-	font-size: 125%
-	line-height 160%
-	margin-bottom 3em
-	text-align left
-	h4
-		margin 0
-		a
-			color colorBody
-			font-family fontAlt
-			display inline
-			text-decoration none
-			&:hover
-				text-decoration underline
-.blogPreview
-	background rgba(0,0,0,.05)
-	overflow hidden
-	padding 1em
-	padding-bottom 0
-.meta
-	clear both
-	color lighten(colorHeader, 65%)
-	font-size 75%
-	margin 0
-	a
-		color lighten(colorHeader, 65%)
-		&:hover
-			text-decoration underline
-#blogList
-	clear both
-	text-align left
-	ul.list
-		li
-			border-top 1px solid rgba(0,0,0,.05)
-			display block
-			margin 0
-			padding 1em
-			&.active
-				background rgba(0,0,0,.05)
-				a
-					color colorBody
-					text-decoration none
-			.meta
-				float right
-
 
 /* =tumblr */
 #tumblr
+	h3
+		background transparent
 	ul.posts
 		margin-bottom 2em
 		li
@@ -255,11 +215,6 @@ footer
 			color colorLink
 		&:hover h4
 			color colorLinkHover
-	h3
-	h4
-	h5
-		font-family "Raleway"
-		font-weight 900
 	.heart
 		color red
 	#products
@@ -277,11 +232,6 @@ footer
 		margin auto
 		max-width 45em
 		padding 1em 2em
-	h3
-	h4
-	h5
-		font-family "Raleway"
-		font-weight 900
 	h4
 		padding-top 2em
 	.list
@@ -337,11 +287,6 @@ footer
 		max-width 300px
 	a &:hover
 		background-color colorLinkHover
-
-
-/* =Boxer =Modal */
-#boxer .boxer-close
-	display none
 	
 
 /* =Media =Queries */
