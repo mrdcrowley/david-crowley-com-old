@@ -9,7 +9,7 @@ global-reset()
 colorBackground = #fff
 colorBody = #444
 colorLink = #666
-colorLinkHover = #333
+colorLinkHover = #C2BA4F
 colorHeader = #333
 colorMain = #333
 colorText = #999
@@ -165,14 +165,10 @@ footer
 			p
 				margin auto
 				max-width 35em
-			a
-				color colorText
-				&:hover
-					color #00a6cd
 			img.thumb
 				display block
 				margin auto
-				margin-bottom .5em
+				margin-bottom 2em
 				max-width (66% - 2em)
 			&.quote
 				.source
@@ -187,7 +183,7 @@ footer
 							display inline
 							padding 0
 						&:hover
-							background #00a6cd
+							background colorLinkHover
 							color #fff
 							text-decoration none
 							&:after

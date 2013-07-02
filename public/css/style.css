@@ -107,7 +107,7 @@ a {
   transition: background-color 0.2s ease-out;
 }
 a:hover {
-  color: #333;
+  color: #c2ba4f;
 }
 p,
 h1,
@@ -288,16 +288,10 @@ footer {
   margin: auto;
   max-width: 35em;
 }
-#tumblr ul.posts li a {
-  color: #999;
-}
-#tumblr ul.posts li a:hover {
-  color: #00a6cd;
-}
 #tumblr ul.posts li img.thumb {
   display: block;
   margin: auto;
-  margin-bottom: 0.5em;
+  margin-bottom: 2em;
   max-width: 64%;
 }
 #tumblr ul.posts li.quote .source a:first-child {
@@ -313,7 +307,7 @@ footer {
   padding: 0;
 }
 #tumblr ul.posts li.quote .source a:first-child:hover {
-  background: #00a6cd;
+  background: #c2ba4f;
   color: #fff;
   text-decoration: none;
 }
@@ -344,7 +338,7 @@ footer {
   color: #666;
 }
 #portfolio a:hover h4 {
-  color: #333;
+  color: #c2ba4f;
 }
 #portfolio .heart {
   color: #f00;
@@ -437,7 +431,7 @@ footer {
   max-width: 300px;
 }
 a .thumb:hover {
-  background-color: #333;
+  background-color: #c2ba4f;
 }
 /* =Media =Queries */
 @media all and (max-device-width: 751px) {
