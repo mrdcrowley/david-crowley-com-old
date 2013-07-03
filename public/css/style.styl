@@ -1,21 +1,20 @@
 @import 'nib'
 @import url('http://fonts.googleapis.com/css?family=Arvo')
-@import url('http://fonts.googleapis.com/css?family=GFS+Didot')
-@import url('http://fonts.googleapis.com/css?family=Raleway:600,900')
-@import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic')
+@import url('http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic')
 
 global-reset()
 
 
 /* =Variables */
-colorBackground = rgba(245,245,245,1)
+colorBackground = #fff
 colorBody = #444
 colorLink = #666
-colorLinkHover = #333
+colorLinkHover = #C2BA4F
 colorHeader = #333
 colorMain = #333
+colorText = #999
 fontBody = Arvo, Georgia, sans-serif
-fontAlt = 'Noto Sans', Georgia, sans-serif
+fontAlt = 'PlayFair Display', Georgia, sans-serif
 animationSpeed = .2s
 
 
@@ -57,18 +56,20 @@ ul
 
 /* =Structure */
 body
-	background colorBackground url('/img/bg.png')
-	color lighten(colorHeader, 50%)
+	background #fff
+	color colorText
 	font-family fontBody
 	line-height 170%
 header
-	background transparent url('/img/headerBg.png') bottom repeat-x
+	background #333 url('/img/slantedDark.png') center bottom repeat-x
 	border-top .25em solid lighten(colorHeader, 15%)
+	font-family fontAlt
+	font-size 125%
+	font-style italic
 	margin-bottom 3em
 	padding .5em
 	padding-bottom 0
 	text-align center
-	text-shadow 0px -1px 0px darken(colorHeader, 30%)
 	#logo a
 		background transparent url("/img/logo.png")
 		display block
@@ -78,7 +79,6 @@ header
 		width 91px
 	#byline
 		color lighten(colorHeader,30%)
-		font-family Arvo
 		margin 0
 		a
 			color rgba(255,255,255,.5)
@@ -92,13 +92,12 @@ header
 		display inline-block
 		margin-top 1em
 		padding .5em
+		padding-bottom .75em
 		text-decoration none
-		text-shadow none
 		&:hover
 			background #fff
 			color #333
-#container
-	padding 0 3em
+
 #contact
 	ul
 		li
@@ -108,31 +107,34 @@ header
 				text-decoration none
 			a:hover
 				color colorLink
-				text-shadow #fff -1px -1px 0;
 #content
 	clear both
-	float left
-	width 100%
+	margin auto
+	h2, h3, h3 h4, h5, h6
+		font-family fontAlt
+		font-weight 400
 	h2
 		background rgba(0,0,0,.1)
 		display inline-block
 		font-size 125%
-		font-style normal
+		font-style italic
 		font-weight 700
 		margin-bottom 3em
 		padding 1em
 	h3
 		background rgba(0,0,0,.2)
 		clear both
-		font-family "Noto Sans"
 		font-size 180%
+		font-style italic
+		font-weight 900
 		padding .5em
 	h4
 		clear both
 		font-size 140%
+		font-style italic
 		font-weight 700
 	h5
-		font-weight bold
+		font-style italic
 		margin 0
 
 footer
@@ -142,70 +144,41 @@ footer
 	padding-top 5em
 	text-align center
 
-/* =Blog */
-.blog
-	color lighten(colorHeader, 50%)
-	font-size: 125%
-	line-height 160%
-	margin-bottom 3em
-	text-align left
-	h4
-		margin 0
-		a
-			color colorBody
-			font-family fontAlt
-			display inline
-			text-decoration none
-			&:hover
-				text-decoration underline
-.blogPreview
-	background rgba(0,0,0,.05)
-	overflow hidden
-	padding 1em
-	padding-bottom 0
-.meta
-	clear both
-	color lighten(colorHeader, 65%)
-	font-size 75%
-	margin 0
-	a
-		color lighten(colorHeader, 65%)
-		&:hover
-			text-decoration underline
-#blogList
-	clear both
-	text-align left
-	ul.list
-		li
-			border-top 1px solid rgba(0,0,0,.05)
-			display block
-			margin 0
-			padding 1em
-			&.active
-				background rgba(0,0,0,.05)
-				a
-					color colorBody
-					text-decoration none
-			.meta
-				float right
-
 
 /* =tumblr */
 #tumblr
+	h3
+		background transparent
 	ul.posts
-		text-align left
+		margin-bottom 2em
 		li
-			border-bottom 1px solid rgba(0,0,0,.05)
+			background #fff url('/img/slantedLight.png') center bottom repeat-x
+			border 0
+			clear both
+			display block
 			font-size 125%
 			line-height 160%
 			padding 2em 1em
-			margin auto
-			max-width 45em
+			padding-bottom 4em
+			padding-top 1em
+			margin 0 auto
+			p
+				margin auto
+				max-width 35em
+			img.thumb
+				display block
+				margin auto
+				margin-bottom 2em
+				max-width (66% - 2em)
 			&.quote
 				.source
 					a:first-child
+						background rgba(0,0,0,.05)
+						color colorText
 						display block
+						margin 1em -.5em 0 -.5em
 						padding .5em
+						text-decoration none
 						&.tumblr_blog
 							display inline
 							padding 0
@@ -215,31 +188,29 @@ footer
 							text-decoration none
 							&:after
 								content " »"
+			&:nth-child(even)
+				background #333 url('/img/slantedDark.png') center bottom repeat-x
+				color #999
+				.source
+					a:first-child
+						background rgba(255,255,255,.05)
+						color #999
 			&:first-child
 				padding-top 0
 			p:last-child 
 				margin-bottom 0
-			img
-				background-color #fff
-				display block
-				margin auto
-				max-width (100% - 2em)
-				max-height 30em
-				padding 15px
-				text-align center
 
 /* =portfolio */
 #portfolio
+	#container
+		margin auto
+		max-width 45em
+		padding 1em 2em
 	a
 		h4
 			color colorLink
 		&:hover h4
 			color colorLinkHover
-	h3
-	h4
-	h5
-		font-family "Raleway"
-		font-weight 900
 	.heart
 		color red
 	#products
@@ -253,11 +224,10 @@ footer
 
 /* =pagePiece */
 #pagePiece
-	h3
-	h4
-	h5
-		font-family "Raleway"
-		font-weight 900
+	#container
+		margin auto
+		max-width 45em
+		padding 1em 2em
 	h4
 		padding-top 2em
 	.list
@@ -313,11 +283,6 @@ footer
 		max-width 300px
 	a &:hover
 		background-color colorLinkHover
-
-
-/* =Boxer =Modal */
-#boxer .boxer-close
-	display none
 	
 
 /* =Media =Queries */
@@ -330,8 +295,6 @@ footer
 			background transparent url("/img/logo@2x.png")
 			height 109px
 			width 181px
-	#container
-		padding 0 1em
 	.one-half,
 	.one-third,
 	.two-thirds
