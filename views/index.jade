@@ -2,8 +2,109 @@ extends layout
 
 block content
 
-// block blogPreview
-	include includes/blogPreview
+    h3 Hardware
+    ul.list.center
+        li
+            h5 Smart Office
+            p A&nbsp;
+                a(href="https://medium.com/@criscristina/the-slightly-smarter-office-80baa8ddb440#.nxmkrfx5u") Smart Office
+                |  that can track individuals by their mobile devices.
+            iframe(height="360", width="640", src="https://player.vimeo.com/video/135403813", frameborder="0", allowfullscreen)
+        li
+            h5 Ultimate Machine
+            p
+                | Information theorist Claude Shannon's&nbsp;
+                a(href="https://github.com/mrdcrowley/ultimate_machine") Ultimate Machine
+                | .
+            iframe(height="360", width="640", src="http://www.youtube.com/embed/k3xFX3sR0iE", frameborder="0", allowfullscreen)
+        li
+            h5 BART Map
+            p The&nbsp;
+                a(href="https://github.com/Ixonos-USA/bart") BART map
+                |  will light up destinations that are about to leave the nearest station.
+        li
+            h5 Socialite
+            p The&nbsp;
+                a(href="https://github.com/mrdcrowley/socialite") Socialite
+                |  lights up when a tumblr gets some&nbsp;
+                span.heart &#9829;
+                | .
 
-block tumblr
-	include includes/tumblr
+    h3 Product creation
+    ul#products.list
+        li.one-half.left
+            a(href="/portfolio/sharing")
+                h4 U-Haul Trip Sharing
+                img(data-original="/img/work/trip.jpg", src="/img/placeholder.gif", alt="", height="1861", width="955", class="thumb two-thirds left")
+        li.one-half.right
+            a(href="/portfolio/companion")
+                h4 U-Haul Moving Companion
+                img(data-original="/img/work/companion.jpg", src="/img/placeholder.gif", alt="", height="922", width="385", class="thumb two-thirds left")
+        li.clear
+            a(href="/portfolio/intranet")
+                h4 Intranet applications
+                img.left.two-thirds.thumb(data-original="/img/portfolio/tools.jpg", src="/img/placeholder.gif", alt="", height="1045", width="987")
+                img.right.one-third.thumb(data-original="/img/portfolio/tools_mobile.jpg", src="/img/placeholder.gif", alt="", height="744", width="396")
+
+    h3 Coding
+    div.two-thirds.right
+        a(href="http://reliefweb.int/")
+            img(data-original="/img/work/reliefweb.jpg", src="/img/placeholder.gif", alt="", height="2597", width="1046", class="thumb one-third right")
+        a(href="http://amerco.com")
+            img(data-original="/img/work/amerco.jpg", src="/img/placeholder.gif", alt="", height="904", width="680", class="thumb one-third right")
+        a(href="https://itunes.apple.com/app/votolatino/id568988087?mt=8")
+            img(data-original="/img/work/voto-ios.jpg", src="/img/placeholder.gif", alt="", height="480", width="320", class="thumb one-third right")
+        a(href="/img/work/seaphone.jpg")
+            img(data-original="/img/work/seaphone.jpg", src="/img/placeholder.gif", alt="", height="1485", width="760", class="thumb one-third right")
+        a(href="/img/work/cloud.jpg")
+            img(data-original="/img/work/cloud.jpg", src="/img/placeholder.gif", alt="", height="1225", width="1140", class="thumb one-third right")
+        a(href="/img/work/seabourne.jpg")
+            img(data-original="/img/work/seabourne.jpg", src="/img/placeholder.gif", alt="", height="900", width="1200", class="thumb one-third right")
+    ul.list
+        li
+            h5 Languages
+            p Javascript/jQuery, Python, PHP, MYSQL, etc.
+        li
+            h5 HTML, CSS and Preprocessors
+            p LESS, SaSS, Stylus
+        li
+            h5 Environments
+            p NodeJS, Drupal, PhoneGap (Android and iOS), Visual Studio, Wordpress, etc.
+    p.subtle.small This site uses Node, Jade, Express and Stylus, see it on&nbsp;
+        a(href="https://github.com/mrdcrowley/david-crowley-com") GitHub
+        | .
+
+    div.clear.one-third.left
+        h3 Research
+        ul#research.list
+            li
+                h5 Field research
+                p Visit people and places to shadow and interview. Scour recorded sessions, phone calls and analytics.
+            li
+                h5 User tests
+                p Use research to define tasks, create personas and conduct user tests, remotely and in person.
+            li
+                h5 Findings
+                p Convert findings into reports, sketches, wireframes and working mockups.
+
+    div.two-thirds.right
+        h3 Prototyping
+        ul.list
+            li
+                img(data-original="/img/work/sketching.jpg", src="/img/placeholder.gif", alt="", height="280", width="600", class="thumb one-half left")
+                h5 Sketching
+                p Rough sketches and drawings can quickly communicate ideas to find out which ones are worth pursuing.
+            li.clear
+                img(data-original="/img/work/wireframes.jpg", src="/img/placeholder.gif", alt="", height="280", width="600", class="thumb one-half left")
+                h5 Wireframing
+                p Usually in Omnigraffle or one of the&nbsp;
+                    a(href="http://balsamiq.com") online
+                    | &nbsp;
+                    a(href="http://gomockingbird.com") tools
+                    | .
+            li.clear
+                img(data-original="/img/work/clickable.jpg", src="/img/placeholder.gif", alt="", height="280", width="600", class="thumb one-half left")
+                h5 Clickable mockups
+                p Using HTML or&nbsp;
+                    a(href="http://www.invisionapp.com/") prototyping&nbsp;
+                    | tools, putting something usable in front of users and stakeholders can communicate and test ideas quickly and before serious development begins.

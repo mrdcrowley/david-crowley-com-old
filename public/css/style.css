@@ -171,7 +171,8 @@ header {
   font-family: 'PlayFair Display', Georgia, sans-serif;
   font-size: 125%;
   font-style: italic;
-  margin-bottom: 3em;
+  height: 11em;
+  margin-bottom: 1em;
   padding: 0.5em;
   padding-bottom: 0;
   text-align: center;
@@ -407,7 +408,7 @@ footer {
 }
 .subtle {
   opacity: 0.75;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
   filter: alpha(opacity=75);
 }
 .thumb {

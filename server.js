@@ -17,10 +17,10 @@ function compile(str, path) {
 
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jade')
-app.set('view options', 
+app.set('view options',
   { layout: false}
 )
-app.use(express.logger('dev'))
+// app.use(express.logger('dev'))
 app.use(stylus.middleware(
   { src: __dirname + '/public'
   , compile: compile
@@ -34,35 +34,45 @@ var refreshDelay = 100000 // refresh delay for tumblr posts
 
 
 // TUMBLR POSTS
-var tumblr = new Tumblr(
-	{
-		consumerKey: 'wbv0QjwCd2yUEODaaUOXR8Ni7P8phsWUNzYZqnK4lNUVNMpA36'
-	}, "slantback.tumblr.com"
-)
+// var tumblr = new Tumblr(
+// 	{
+// 		consumerKey: 'wbv0QjwCd2yUEODaaUOXR8Ni7P8phsWUNzYZqnK4lNUVNMpA36'
+// 	}, "slantback.tumblr.com"
+// )
 
-var	getTumblrPosts = function getTumblrPosts(){
-	tumblr.get('/posts', {hostname: 'slantback.tumblr.com'}, function(json){
-		postsTumblr = json.posts
-	})
-	console.log('tumblr posts updated')
-}
+// var	getTumblrPosts = function getTumblrPosts(){
+// 	tumblr.get('/posts', {hostname: 'slantback.tumblr.com'}, function(json){
+// 		postsTumblr = json.posts
+// 	})
+// 	console.log('tumblr posts updated')
+// }
 
 
 // INDEX
 app.get('/', function (req, res) {
 	res.render('index', {
 		title : 'Home',
-		cssID : 'pageHome'
+		cssID : 'portfolio'
 	})
 })
 
 
 // PORTFOLIO
-app.get('/portfolio', portfolio.index)
+app.get('/portfolio', function (req, res) {
+	res.render('index', {
+		title : 'Home',
+		cssID : 'portfolio'
+	})
+})
 app.get('/portfolio/companion', portfolio.companion)
 app.get('/portfolio/intranet', portfolio.intranet)
 app.get('/portfolio/sharing', portfolio.sharing)
-app.get('/work', portfolio.index) // old url, point to /portfolio
+app.get('/work', function (req, res) {
+	res.render('index', {
+		title : 'Home',
+		cssID : 'portfolio'
+	})
+})
 
 
 // TIMELINE
@@ -73,23 +83,23 @@ app.get('/timeline', function (req, res) {
 	})
 })
 
-// BLOG POSTS
-poet.set({
-	postsPerPage : 3,
-	posts        : './_posts',
-	metaFormat   : 'json',
-	readMoreLink : function ( post ) {
-      var anchor = '<a href="'+post.url+'" title="Read more of '+post.title+'" class="more">More &rarr;</a>';
-      return '<p>' + anchor + '</p>';
-    }
-}).createPostRoute( '/post/:post', 'post' )
-	.createPageRoute( '/page/:page', 'page' )
-	.createTagRoute( '/tag/:tag', 'tag' )
-	.createCategoryRoute( '/category/:category', 'category' )
-	.init();
+// // BLOG POSTS
+// poet.set({
+// 	postsPerPage : 3,
+// 	posts        : './_posts',
+// 	metaFormat   : 'json',
+// 	readMoreLink : function ( post ) {
+//       var anchor = '<a href="'+post.url+'" title="Read more of '+post.title+'" class="more">More &rarr;</a>';
+//       return '<p>' + anchor + '</p>';
+//     }
+// }).createPostRoute( '/post/:post', 'post' )
+// 	.createPageRoute( '/page/:page', 'page' )
+// 	.createTagRoute( '/tag/:tag', 'tag' )
+// 	.createCategoryRoute( '/category/:category', 'category' )
+// 	.init();
 
 // INIT
-getTumblrPosts();
-setInterval(getTumblrPosts,refreshDelay); // keep getting new posts
+// getTumblrPosts();
+// setInterval(getTumblrPosts,refreshDelay); // keep getting new posts
 
 app.listen(3000)
